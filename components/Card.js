@@ -4,7 +4,7 @@ const Card = ({ children }) => {
   return (
     <Box
       p={8}
-      mt={4}
+      my={6}
       maxW={"600px"}
       w="full"
       bg="white"

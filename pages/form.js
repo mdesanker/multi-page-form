@@ -1,5 +1,6 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import Card from "../components/Card";
+import CompanyDetail from "../components/formComponents/CompanyDetail";
 
 const Form = () => {
   return (
@@ -13,7 +14,7 @@ const Form = () => {
     >
       <Heading>Propose a Bounty</Heading>
       <Card>
-        <h2>Form</h2>
+        <CompanyDetail />
       </Card>
     </Flex>
   );
