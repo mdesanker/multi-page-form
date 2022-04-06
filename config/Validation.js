@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-const companyDetailValidation = Yup.object({
+const newCompanyValidationSchema = Yup.object({
   name: Yup.string().required("Company name is required"),
   location: Yup.string().required("Location is required"),
   policy: Yup.string().required("Remote policy is required"),
@@ -13,4 +13,4 @@ const companyDetailValidation = Yup.object({
     .required("Admin email address is required"),
 });
 
-export default companyDetailValidation;
+export default newCompanyValidationSchema;

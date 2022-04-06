@@ -5,11 +5,11 @@ import {
   fundingStageChoices,
   remotePolicyChoices,
 } from "../../config/SelectFieldOptions";
-import companyDetailValidation from "../../config/Validation";
+import newCompanyValidationSchema from "../../config/Validation";
 import SelectField from "./SelectField";
 import TextField from "./TextField";
 
-const CompanyDetail = () => {
+const NewCompanyForm = () => {
   return (
     <Formik
       initialValues={{
@@ -22,7 +22,7 @@ const CompanyDetail = () => {
         admin: "",
         email: "",
       }}
-      validationSchema={companyDetailValidation}
+      validationSchema={newCompanyValidationSchema}
       onSubmit={(values, actions) => {
         alert(JSON.stringify(values, null, 2));
         // actions.resetForm();
@@ -74,4 +74,4 @@ const CompanyDetail = () => {
   );
 };
 
-export default CompanyDetail;
+export default NewCompanyForm;
