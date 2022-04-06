@@ -20,3 +20,12 @@ export const returningCompanyValidationSchema = Yup.object({
     .email("Invalid email address")
     .required("Admin email address is required"),
 });
+
+export const newRoleValidationSchema = Yup.object({
+  title: Yup.string().required("Job title is required"),
+  salary: Yup.string().required("Salary (range) is required"),
+  department: Yup.string().required("Job department is required"),
+  location: Yup.string().required("Location is required"),
+  experience: Yup.string().required("Desired experience is required"),
+  description: Yup.string().required("Job description is required"),
+});

@@ -13,6 +13,7 @@ const NewCompanyForm = () => {
   return (
     <Formik
       initialValues={{
+        companyID: "",
         name: "",
         location: "",
         policy: "",
@@ -31,7 +32,7 @@ const NewCompanyForm = () => {
       {(formik) => (
         <VStack as="form" onSubmit={formik.handleSubmit}>
           <Heading as="h2" fontSize="2xl">
-            Company Details
+            New Company Details
           </Heading>
 
           <TextField name="companyId" label="Comapny ID" />

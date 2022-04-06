@@ -3,17 +3,11 @@ import { Formik } from "formik";
 import { returningCompanyValidationSchema } from "../../config/Validation";
 import TextField from "./fieldComponents/TextField";
 
-const NewCompanyForm = () => {
+const ReturningCompanyForm = () => {
   return (
     <Formik
       initialValues={{
-        name: "",
-        location: "",
-        policy: "",
-        size: "",
-        stage: "",
-        url: "",
-        admin: "",
+        companyId: "",
         email: "",
       }}
       validationSchema={returningCompanyValidationSchema}
@@ -25,7 +19,7 @@ const NewCompanyForm = () => {
       {(formik) => (
         <VStack as="form" onSubmit={formik.handleSubmit}>
           <Heading as="h2" fontSize="2xl">
-            Company Details
+            Returning Company Details
           </Heading>
 
           <TextField name="companyId" label="Comapny ID" />
@@ -41,4 +35,4 @@ const NewCompanyForm = () => {
   );
 };
 
-export default NewCompanyForm;
+export default ReturningCompanyForm;
