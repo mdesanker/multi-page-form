@@ -5,9 +5,9 @@ import {
   fundingStageChoices,
   remotePolicyChoices,
 } from "../../config/SelectFieldOptions";
-import newCompanyValidationSchema from "../../config/Validation";
-import SelectField from "./SelectField";
-import TextField from "./TextField";
+import { newCompanyValidationSchema } from "../../config/Validation";
+import SelectField from "./fieldComponents/SelectField";
+import TextField from "./fieldComponents/TextField";
 
 const NewCompanyForm = () => {
   return (
@@ -33,6 +33,8 @@ const NewCompanyForm = () => {
           <Heading as="h2" fontSize="2xl">
             Company Details
           </Heading>
+
+          <TextField name="companyId" label="Comapny ID" />
 
           <TextField name="name" label="Comapny Name" />
 
@@ -63,7 +65,7 @@ const NewCompanyForm = () => {
 
           <TextField name="admin" label="Admin Name" />
 
-          <TextField name="email" label="Admin Enail" type="email" />
+          <TextField name="email" label="Admin Email" type="email" />
 
           <Button type="submit" colorScheme="blue">
             Next Step
