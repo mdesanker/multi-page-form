@@ -1,18 +1,30 @@
-import {
-  Button,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Heading,
-  Input,
-  Select,
-  VStack,
-} from "@chakra-ui/react";
-import { Field, Formik } from "formik";
+import { Button, Heading, VStack } from "@chakra-ui/react";
+import { Formik } from "formik";
 import * as Yup from "yup";
+import SelectField from "./SelectField";
 import TextField from "./TextField";
 
 const CompanyDetail = () => {
+  const policyChoices = [
+    { key: "Remote", value: "remote" },
+    { key: "Hybrid", value: "hybrid" },
+    { key: "On-Site", value: "onsite" },
+  ];
+
+  const sizeChoices = [
+    { key: "< 10", value: "xs" },
+    { key: "11 - 100", value: "sm" },
+    { key: "101 - 500", value: "md" },
+    { key: "501 - 2500", value: "lg" },
+    { key: "2500+", value: "xl" },
+  ];
+
+  const stageChoices = [
+    { key: "Pre-Seed", value: "pre" },
+    { key: "Seed", value: "seed" },
+    { key: "Series A/B/C", value: "series" },
+  ];
+
   return (
     <Formik
       initialValues={{
@@ -52,54 +64,26 @@ const CompanyDetail = () => {
 
           <TextField name="location" label="Location" />
 
-          <FormControl
-            isInvalid={formik.errors.policy && formik.touched.policy}
-          >
-            <FormLabel>Remote policy</FormLabel>
-            <Field
-              as={Select}
-              name="policy"
-              placeholder="Select option"
-              {...formik.getFieldProps("policy")}
-            >
-              <option value="remote">Remote</option>
-              <option value="hybrid">Hybrid</option>
-              <option value="onsite">On-site</option>
-            </Field>
-            <FormErrorMessage>{formik.errors.policy}</FormErrorMessage>
-          </FormControl>
+          <SelectField
+            name="policy"
+            label="Remote Policy"
+            placeholder="Choose option"
+            options={policyChoices}
+          />
 
-          <FormControl isInvalid={formik.errors.size && formik.touched.size}>
-            <FormLabel>Number of employees</FormLabel>
-            <Field
-              as={Select}
-              name="size"
-              placeholder="Select option"
-              {...formik.getFieldProps("size")}
-            >
-              <option value="xs">{`< 10`}</option>
-              <option value="sm">{`11 - 100`}</option>
-              <option value="md">{`101 - 500`}</option>
-              <option value="lg">{`101 - 500`}</option>
-              <option value="xl">{`500+`}</option>
-            </Field>
-            <FormErrorMessage>{formik.errors.size}</FormErrorMessage>
-          </FormControl>
+          <SelectField
+            name="size"
+            label="Company Size"
+            placeholder="Choose option"
+            options={sizeChoices}
+          />
 
-          <FormControl isInvalid={formik.errors.stage && formik.touched.stage}>
-            <FormLabel>Funding Stage</FormLabel>
-            <Field
-              as={Select}
-              name="stage"
-              placeholder="Select option"
-              {...formik.getFieldProps("stage")}
-            >
-              <option value="pre">Pre-seed</option>
-              <option value="seed">Seed</option>
-              <option value="series">Series A/B/C</option>
-            </Field>
-            <FormErrorMessage>{formik.errors.stage}</FormErrorMessage>
-          </FormControl>
+          <SelectField
+            name="stage"
+            label="Funding Stage"
+            placeholder="Choose option"
+            options={stageChoices}
+          />
 
           <TextField name="url" label="Company Website" />
 
