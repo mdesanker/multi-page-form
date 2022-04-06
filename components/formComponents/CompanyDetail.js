@@ -7,27 +7,58 @@ import {
   Select,
   VStack,
 } from "@chakra-ui/react";
+import { useFormik } from "formik";
 
 const CompanyDetail = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      location: "",
+      policy: "",
+      size: "",
+      stage: "",
+      url: "",
+      admin: "",
+      email: "",
+    },
+    onSubmit: (values, actions) => {
+      alert(JSON.stringify(values, null, 2));
+      // actions.resetForm();
+    },
+  });
+
   return (
-    <VStack>
+    <VStack as="form" onSubmit={formik.handleSubmit}>
       <Heading as="h2" fontSize="2xl">
         Company Details
       </Heading>
 
       <FormControl>
         <FormLabel>Company Name</FormLabel>
-        <Input name="name" />
+        <Input
+          name="name"
+          value={formik.values.name}
+          onChange={formik.handleChange}
+        />
       </FormControl>
 
       <FormControl>
         <FormLabel>Location</FormLabel>
-        <Input name="location" />
+        <Input
+          name="location"
+          value={formik.values.location}
+          onChange={formik.handleChange}
+        />
       </FormControl>
 
       <FormControl>
         <FormLabel>Remote policy</FormLabel>
-        <Select name="name" placeholder="Select option">
+        <Select
+          name="policy"
+          placeholder="Select option"
+          value={formik.values.policy}
+          onChange={formik.handleChange}
+        >
           <option value="remote">Remote</option>
           <option value="hybrid">Hybrid</option>
           <option value="onsite">On-site</option>
@@ -36,7 +67,12 @@ const CompanyDetail = () => {
 
       <FormControl>
         <FormLabel>Number of employees</FormLabel>
-        <Select name="size" placeholder="Select option">
+        <Select
+          name="size"
+          placeholder="Select option"
+          value={formik.values.size}
+          onChange={formik.handleChange}
+        >
           <option value="xs">{`< 10`}</option>
           <option value="sm">{`11 - 100`}</option>
           <option value="md">{`101 - 500`}</option>
@@ -47,7 +83,12 @@ const CompanyDetail = () => {
 
       <FormControl>
         <FormLabel>Funding Stage</FormLabel>
-        <Select name="name" placeholder="Select option">
+        <Select
+          name="stage"
+          placeholder="Select option"
+          value={formik.values.stage}
+          onChange={formik.handleChange}
+        >
           <option value="pre">Pre-seed</option>
           <option value="seed">Seed</option>
           <option value="series">Series A/B/C</option>
@@ -56,17 +97,29 @@ const CompanyDetail = () => {
 
       <FormControl>
         <FormLabel>Company Website</FormLabel>
-        <Input name="url" />
+        <Input
+          name="url"
+          value={formik.values.url}
+          onChange={formik.handleChange}
+        />
       </FormControl>
 
       <FormControl>
         <FormLabel>Admin Name</FormLabel>
-        <Input name="admin" />
+        <Input
+          name="admin"
+          value={formik.values.admin}
+          onChange={formik.handleChange}
+        />
       </FormControl>
 
       <FormControl>
         <FormLabel>Admin Email</FormLabel>
-        <Input name="email" />
+        <Input
+          name="email"
+          value={formik.values.email}
+          onChange={formik.handleChange}
+        />
       </FormControl>
 
       <Button type="submit" colorScheme="blue">
