@@ -8,8 +8,9 @@ import {
   Select,
   VStack,
 } from "@chakra-ui/react";
-import { Field, Formik, useFormik } from "formik";
+import { Field, Formik } from "formik";
 import * as Yup from "yup";
+import TextField from "./TextField";
 
 const CompanyDetail = () => {
   return (
@@ -47,23 +48,9 @@ const CompanyDetail = () => {
             Company Details
           </Heading>
 
-          <FormControl isInvalid={formik.errors.name && formik.touched.name}>
-            <FormLabel>Company Name</FormLabel>
-            <Field as={Input} name="name" {...formik.getFieldProps("name")} />
-            <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
-          </FormControl>
+          <TextField name="name" label="Comapny Name" />
 
-          <FormControl
-            isInvalid={formik.errors.location && formik.touched.location}
-          >
-            <FormLabel>Location</FormLabel>
-            <Field
-              as={Input}
-              name="location"
-              {...formik.getFieldProps("location")}
-            />
-            <FormErrorMessage>{formik.errors.location}</FormErrorMessage>
-          </FormControl>
+          <TextField name="location" label="Location" />
 
           <FormControl
             isInvalid={formik.errors.policy && formik.touched.policy}
@@ -114,22 +101,11 @@ const CompanyDetail = () => {
             <FormErrorMessage>{formik.errors.stage}</FormErrorMessage>
           </FormControl>
 
-          <FormControl isInvalid={formik.errors.url && formik.touched.url}>
-            <FormLabel>Company Website</FormLabel>
-            <Field as={Input} name="url" {...formik.getFieldProps("url")} />
-          </FormControl>
+          <TextField name="url" label="Company Website" />
 
-          <FormControl isInvalid={formik.errors.admin && formik.touched.admin}>
-            <FormLabel>Admin Name</FormLabel>
-            <Input name="admin" {...formik.getFieldProps("admin")} />
-            <FormErrorMessage>{formik.errors.admin}</FormErrorMessage>
-          </FormControl>
+          <TextField name="admin" label="Admin Name" />
 
-          <FormControl isInvalid={formik.errors.email && formik.touched.email}>
-            <FormLabel>Admin Email</FormLabel>
-            <Field as={Input} name="email" {...formik.getFieldProps("email")} />
-            <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-          </FormControl>
+          <TextField name="email" label="Admin Enail" type="email" />
 
           <Button type="submit" colorScheme="blue">
             Next Step
