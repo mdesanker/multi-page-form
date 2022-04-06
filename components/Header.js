@@ -1,5 +1,5 @@
 import { Avatar, Box, Flex, Heading, Image, Button } from "@chakra-ui/react";
-import Link from "next/link";
+import NextLink from "next/link";
 
 const Header = () => {
   return (
@@ -12,15 +12,13 @@ const Header = () => {
             boxSize="24px"
             objectFit="cover"
           />
-          <Link href="#">
-            <a>
-              <Heading as="h1" size={"md"} fontWeight="bold">
-                Talentdrop
-              </Heading>
-            </a>
-          </Link>
+          <NextLink href="/" passHref>
+            <Heading as="h1" size={"md"} fontWeight="bold" cursor="pointer">
+              Talentdrop
+            </Heading>
+          </NextLink>
         </Flex>
-        <Flex alignItems="center" gap={2}>
+        <Flex alignItems="center" gap={3}>
           <Button colorScheme="blue">General Referral</Button>
           <Avatar bg="gray.400" boxSize="32px" cursor="pointer" />
         </Flex>

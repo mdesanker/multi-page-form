@@ -9,7 +9,7 @@ const Home = () => {
         <title>Multi-Page Form</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <NextLink href="#" passHref>
+      <NextLink href="/form" passHref>
         <Button size="lg" colorScheme="blue" variant="outline">
           Create a Bounty
         </Button>
