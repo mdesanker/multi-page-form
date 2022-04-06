@@ -49,12 +49,7 @@ const CompanyDetail = () => {
 
       <FormControl isInvalid={formik.errors.name && formik.touched.name}>
         <FormLabel>Company Name</FormLabel>
-        <Input
-          name="name"
-          value={formik.values.name}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
+        <Input name="name" {...formik.getFieldProps("name")} />
         <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
       </FormControl>
 
@@ -62,12 +57,7 @@ const CompanyDetail = () => {
         isInvalid={formik.errors.location && formik.touched.location}
       >
         <FormLabel>Location</FormLabel>
-        <Input
-          name="location"
-          value={formik.values.location}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
+        <Input name="location" {...formik.getFieldProps("location")} />
         <FormErrorMessage>{formik.errors.location}</FormErrorMessage>
       </FormControl>
 
@@ -76,9 +66,7 @@ const CompanyDetail = () => {
         <Select
           name="policy"
           placeholder="Select option"
-          value={formik.values.policy}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps("policy")}
         >
           <option value="remote">Remote</option>
           <option value="hybrid">Hybrid</option>
@@ -92,9 +80,7 @@ const CompanyDetail = () => {
         <Select
           name="size"
           placeholder="Select option"
-          value={formik.values.size}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps("size")}
         >
           <option value="xs">{`< 10`}</option>
           <option value="sm">{`11 - 100`}</option>
@@ -110,9 +96,7 @@ const CompanyDetail = () => {
         <Select
           name="stage"
           placeholder="Select option"
-          value={formik.values.stage}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          {...formik.getFieldProps("stage")}
         >
           <option value="pre">Pre-seed</option>
           <option value="seed">Seed</option>
@@ -123,33 +107,18 @@ const CompanyDetail = () => {
 
       <FormControl isInvalid={formik.errors.url && formik.touched.url}>
         <FormLabel>Company Website</FormLabel>
-        <Input
-          name="url"
-          value={formik.values.url}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
+        <Input name="url" {...formik.getFieldProps("url")} />
       </FormControl>
 
       <FormControl isInvalid={formik.errors.admin && formik.touched.admin}>
         <FormLabel>Admin Name</FormLabel>
-        <Input
-          name="admin"
-          value={formik.values.admin}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
+        <Input name="admin" {...formik.getFieldProps("admin")} />
         <FormErrorMessage>{formik.errors.admin}</FormErrorMessage>
       </FormControl>
 
       <FormControl isInvalid={formik.errors.email && formik.touched.email}>
         <FormLabel>Admin Email</FormLabel>
-        <Input
-          name="email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-        />
+        <Input name="email" {...formik.getFieldProps("email")} />
         <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
       </FormControl>
 
