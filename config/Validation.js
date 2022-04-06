@@ -22,10 +22,14 @@ export const returningCompanyValidationSchema = Yup.object({
 });
 
 export const newRoleValidationSchema = Yup.object({
-  title: Yup.string().required("Job title is required"),
-  salary: Yup.string().required("Salary (range) is required"),
-  department: Yup.string().required("Job department is required"),
-  location: Yup.string().required("Location is required"),
-  experience: Yup.string().required("Desired experience is required"),
-  description: Yup.string().required("Job description is required"),
+  roles: Yup.array().of(
+    Yup.object().shape({
+      title: Yup.string().required("Job title is required"),
+      salary: Yup.string().required("Salary (range) is required"),
+      department: Yup.string().required("Job department is required"),
+      location: Yup.string().required("Location is required"),
+      experience: Yup.string().required("Desired experience is required"),
+      description: Yup.string().required("Job description is required"),
+    })
+  ),
 });
