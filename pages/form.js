@@ -1,10 +1,27 @@
 import { Flex, Heading } from "@chakra-ui/react";
+import { useState } from "react";
 import Card from "../components/Card";
-import NewCompanyForm from "../components/formComponents/NewCompanyForm";
-import ReturningCompanyForm from "../components/formComponents/ReturningCompanyForm";
+import CompanyDetailForm from "../components/formComponents/CompanyDetailForm";
 import RoleForm from "../components/formComponents/RoleForm";
 
 const Form = () => {
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [<CompanyDetailForm key={0} />, <RoleForm key={2} />];
+
+  const nextStepHandler = (final = false) => {
+    if (final) {
+      console.log("Form submitted");
+      return;
+    }
+
+    setCurrentStep((prev) => prev++);
+  };
+
+  const prevStepHandler = () => {
+    setCurrentStep((prev) => prev--);
+  };
+
   return (
     <Flex
       direction="column"
@@ -15,11 +32,7 @@ const Form = () => {
       justifyContent="center"
     >
       <Heading>Propose a Bounty</Heading>
-      <Card>
-        {/* <NewCompanyForm /> */}
-        {/* <ReturningCompanyForm /> */}
-        <RoleForm />
-      </Card>
+      <Card>{steps[currentStep]}</Card>
     </Flex>
   );
 };
