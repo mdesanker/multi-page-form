@@ -1,4 +1,10 @@
-import { Button, Heading, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Divider,
+  Heading,
+  StackDivider,
+  VStack,
+} from "@chakra-ui/react";
 import { Formik } from "formik";
 import {
   companySizeChoices,
@@ -63,6 +69,8 @@ const NewCompanyForm = () => {
           />
 
           <TextField name="url" label="Company Website" />
+
+          <Divider borderColor="gray.300" py={2} />
 
           <TextField name="admin" label="Admin Name" />
 
