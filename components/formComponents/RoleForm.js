@@ -1,6 +1,7 @@
 import { Button, Heading, VStack } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { newRoleValidationSchema } from "../../config/Validation";
+import TextAreaField from "./fieldComponents/TextAreaField";
 import TextField from "./fieldComponents/TextField";
 
 const RoleForm = () => {
@@ -35,6 +36,8 @@ const RoleForm = () => {
           <TextField name="location" label="Location" />
 
           <TextField name="experience" label="Desired Experience (years)" />
+
+          <TextAreaField name="description" label="Job Description" />
 
           <Button type="submit" colorScheme="blue">
             Next Step
