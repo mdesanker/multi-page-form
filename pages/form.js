@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import CompanyDetailForm from "../components/formComponents/CompanyDetailForm";
 import Confirmation from "../components/formComponents/Confirmation";
 import RoleForm from "../components/formComponents/RoleForm";
+import StepCounter from "../components/formComponents/stepCounter/StepCounter";
 import Success from "../components/formComponents/Success";
 
 const Form = () => {
@@ -48,7 +49,10 @@ const Form = () => {
       justifyContent="center"
     >
       <Heading>Propose a Bounty</Heading>
-      <Card>{steps[currentStep]}</Card>
+      <Card>
+        <StepCounter step={currentStep} />
+        {steps[currentStep]}
+      </Card>
     </Flex>
   );
 };
