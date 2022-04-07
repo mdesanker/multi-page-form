@@ -1,10 +1,10 @@
-import { Box, Button, Flex, Heading, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
 import { FieldArray, Form, Formik } from "formik";
 import { newRoleValidationSchema } from "../../config/Validation";
 import TextAreaField from "./fieldComponents/TextAreaField";
 import TextField from "./fieldComponents/TextField";
 
-const RoleForm = () => {
+const RoleForm = ({ next, prev }) => {
   const initialValues = {
     roles: [
       {
@@ -24,9 +24,9 @@ const RoleForm = () => {
     <Formik
       initialValues={initialValues}
       validationSchema={newRoleValidationSchema}
-      onSubmit={(values, actions) => {
+      onSubmit={(values) => {
         alert(JSON.stringify(values, null, 2));
-        // actions.resetForm();
+        next(true);
       }}
     >
       {(formik) => (
@@ -93,9 +93,19 @@ const RoleForm = () => {
               </VStack>
             )}
           </FieldArray>
-          <Button type="submit" colorScheme="blue">
-            Next Step
-          </Button>
+          <HStack>
+            <Button
+              type="button"
+              colorScheme="blue"
+              variant="outline"
+              onClick={prev}
+            >
+              Back
+            </Button>
+            <Button type="submit" colorScheme="blue">
+              Submit
+            </Button>
+          </HStack>
         </VStack>
       )}
     </Formik>

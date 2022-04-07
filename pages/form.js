@@ -7,20 +7,23 @@ import RoleForm from "../components/formComponents/RoleForm";
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
-  const steps = [<CompanyDetailForm key={0} />, <RoleForm key={2} />];
-
-  const nextStepHandler = (final = false) => {
+  function nextStepHandler(final = false) {
     if (final) {
       console.log("Form submitted");
       return;
     }
 
-    setCurrentStep((prev) => prev++);
-  };
+    setCurrentStep(currentStep + 1);
+  }
 
-  const prevStepHandler = () => {
-    setCurrentStep((prev) => prev--);
-  };
+  function prevStepHandler() {
+    setCurrentStep(currentStep - 1);
+  }
+
+  const steps = [
+    <CompanyDetailForm key={0} next={nextStepHandler} />,
+    <RoleForm key={1} next={nextStepHandler} prev={prevStepHandler} />,
+  ];
 
   return (
     <Flex

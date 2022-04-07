@@ -15,11 +15,11 @@ import { newCompanyValidationSchema } from "../../config/Validation";
 import SelectField from "./fieldComponents/SelectField";
 import TextField from "./fieldComponents/TextField";
 
-const NewCompanyForm = () => {
+const NewCompanyForm = ({ next }) => {
   return (
     <Formik
       initialValues={{
-        companyID: "",
+        companyId: "",
         name: "",
         location: "",
         policy: "",
@@ -30,9 +30,9 @@ const NewCompanyForm = () => {
         email: "",
       }}
       validationSchema={newCompanyValidationSchema}
-      onSubmit={(values, actions) => {
+      onSubmit={(values) => {
         alert(JSON.stringify(values, null, 2));
-        // actions.resetForm();
+        next(false);
       }}
     >
       {(formik) => (
@@ -41,9 +41,9 @@ const NewCompanyForm = () => {
             New Company Details
           </Heading>
 
-          <TextField name="companyId" label="Comapny ID" />
+          <TextField name="companyId" label="Company ID" />
 
-          <TextField name="name" label="Comapny Name" />
+          <TextField name="name" label="Company Name" />
 
           <TextField name="location" label="Location" />
 

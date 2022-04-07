@@ -1,9 +1,10 @@
 import { Button, Heading, VStack } from "@chakra-ui/react";
 import { Formik } from "formik";
+import next from "next";
 import { returningCompanyValidationSchema } from "../../config/Validation";
 import TextField from "./fieldComponents/TextField";
 
-const ReturningCompanyForm = () => {
+const ReturningCompanyForm = ({ next }) => {
   return (
     <Formik
       initialValues={{
@@ -11,9 +12,9 @@ const ReturningCompanyForm = () => {
         email: "",
       }}
       validationSchema={returningCompanyValidationSchema}
-      onSubmit={(values, actions) => {
+      onSubmit={(values) => {
         alert(JSON.stringify(values, null, 2));
-        // actions.resetForm();
+        next(false);
       }}
     >
       {(formik) => (
