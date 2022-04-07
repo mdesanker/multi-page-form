@@ -1,6 +1,6 @@
-import { Box, Square } from "@chakra-ui/react";
+import { Square } from "@chakra-ui/react";
 
-const CustomButton = ({ children, clickHander, active }) => {
+const CompanyTypeBtn = ({ children, clickHander, active }) => {
   return (
     <Square
       as="button"
@@ -20,4 +20,4 @@ const CustomButton = ({ children, clickHander, active }) => {
   );
 };
 
-export default CustomButton;
+export default CompanyTypeBtn;

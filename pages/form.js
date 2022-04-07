@@ -1,11 +1,11 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Card from "../components/Card";
-import CompanyDetailForm from "../components/formComponents/CompanyDetailForm";
-import Confirmation from "../components/formComponents/Confirmation";
-import RoleForm from "../components/formComponents/RoleForm";
-import StepCounter from "../components/formComponents/stepCounter/StepCounter";
-import Success from "../components/formComponents/Success";
+import CompanyDetailForm from "../components/FormComponents/CompanyDetailStep/CompanyDetailForm";
+import Confirmation from "../components/FormComponents/ConfirmationStep/Confirmation";
+import RoleForm from "../components/FormComponents/RoleDetailStep/RoleForm";
+import StepCounter from "../components/FormComponents/StepCounter/StepCounter";
+import Success from "../components/FormComponents/SuccessStep/Success";
 
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);

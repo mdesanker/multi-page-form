@@ -1,11 +1,11 @@
-import { Box, Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Button, Heading, HStack, VStack } from "@chakra-ui/react";
 import { FieldArray, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { newRoleValidationSchema } from "../../config/Validation";
-import { updateRoles } from "../../store/slices/roleSlice";
-import TextAreaField from "./fieldComponents/TextAreaField";
-import TextField from "./fieldComponents/TextField";
+import { newRoleValidationSchema } from "../../../config/Validation";
+import { updateRoles } from "../../../store/slices/roleSlice";
+import TextAreaField from "../FieldComponents/TextAreaField";
+import TextField from "../FieldComponents/TextField";
 
 const RoleForm = ({ next, prev }) => {
   const dispatch = useDispatch();

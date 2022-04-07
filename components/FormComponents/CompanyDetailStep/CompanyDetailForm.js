@@ -1,7 +1,7 @@
-import { Button, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Text } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { setNew, setReturning } from "../../store/slices/companySlice";
-import CustomButton from "./CompanyDetail/CustomButton";
+import { setNew, setReturning } from "../../../store/slices/companySlice";
+import CompanyTypeBtn from "./CompanyTypeBtn";
 import NewCompanyForm from "./NewCompanyForm";
 import ReturningCompanyForm from "./ReturningCompanyForm";
 
@@ -21,12 +21,12 @@ const CompanyDetailForm = ({ next }) => {
   return (
     <Flex direction="column" justifyContent="center" w="full">
       <HStack justifyContent="space-around" mb={6}>
-        <CustomButton clickHander={newHandler} active={isNew}>
+        <CompanyTypeBtn clickHander={newHandler} active={isNew}>
           New
-        </CustomButton>
-        <CustomButton clickHander={returningHandler} active={!isNew}>
+        </CompanyTypeBtn>
+        <CompanyTypeBtn clickHander={returningHandler} active={!isNew}>
           Returning
-        </CustomButton>
+        </CompanyTypeBtn>
       </HStack>
 
       <Text color="gray.500" py={2}>

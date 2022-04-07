@@ -1,12 +1,4 @@
-import {
-  Button,
-  Divider,
-  Flex,
-  Heading,
-  HStack,
-  StackDivider,
-  VStack,
-} from "@chakra-ui/react";
+import { Button, Divider, Flex, HStack } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,11 +6,11 @@ import {
   companySizeChoices,
   fundingStageChoices,
   remotePolicyChoices,
-} from "../../config/SelectFieldOptions";
-import { newCompanyValidationSchema } from "../../config/Validation";
-import { updateDetails } from "../../store/slices/companySlice";
-import SelectField from "./fieldComponents/SelectField";
-import TextField from "./fieldComponents/TextField";
+} from "../../../config/SelectFieldOptions";
+import { newCompanyValidationSchema } from "../../../config/Validation";
+import { updateDetails } from "../../../store/slices/companySlice";
+import SelectField from "../FieldComponents/SelectField";
+import TextField from "../FieldComponents/TextField";
 
 const NewCompanyForm = ({ next }) => {
   const dispatch = useDispatch();

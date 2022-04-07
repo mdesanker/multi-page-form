@@ -1,11 +1,10 @@
-import { Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Button, Flex, HStack } from "@chakra-ui/react";
 import { Formik } from "formik";
-import next from "next";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { returningCompanyValidationSchema } from "../../config/Validation";
-import { updateDetails } from "../../store/slices/companySlice";
-import TextField from "./fieldComponents/TextField";
+import { returningCompanyValidationSchema } from "../../../config/Validation";
+import { updateDetails } from "../../../store/slices/companySlice";
+import TextField from "../FieldComponents/TextField";
 
 const ReturningCompanyForm = ({ next }) => {
   const dispatch = useDispatch();

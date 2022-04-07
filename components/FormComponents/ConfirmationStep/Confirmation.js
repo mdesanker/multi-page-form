@@ -1,11 +1,11 @@
 import { Button, Heading, Text, VStack } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import CompanyDetailSummary from "./confirmationComponents/CompanyDetailSummary";
-import RoleDetailSummary from "./confirmationComponents/RoleDetailSummary";
+import CompanyDetailSummary from "./CompanyDetailSummary";
+import RoleDetailSummary from "./RoleDetailSummary";
 import { v4 as uuidv4 } from "uuid";
-import { companyReset } from "../../store/slices/companySlice";
-import { rolesReset } from "../../store/slices/roleSlice";
-import ConfirmationSectionHeader from "./confirmationComponents/ConfirmationSectionHeader";
+import { companyReset } from "../../../store/slices/companySlice";
+import { rolesReset } from "../../../store/slices/roleSlice";
+import ConfirmationSectionHeader from "./ConfirmationSectionHeader";
 
 const Confirmation = ({ next, prev, set }) => {
   const dispatch = useDispatch();
