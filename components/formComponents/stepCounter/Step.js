@@ -17,7 +17,13 @@ const Step = ({ step, title, active }) => {
       >
         {step > active ? step : <Box as={AiOutlineCheck} />}
       </Square>
-      <Text color={isActive ? "gray.800" : "gray.600"}>{title}</Text>
+      <Text
+        color={isActive ? "gray.800" : "gray.600"}
+        fontWeight="semibold"
+        display={["none", "block"]}
+      >
+        {title}
+      </Text>
     </HStack>
   );
 };
