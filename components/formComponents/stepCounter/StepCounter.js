@@ -1,12 +1,12 @@
 import { HStack } from "@chakra-ui/react";
 import Step from "./Step";
 
-const StepCounter = ({ step }) => {
+const StepCounter = ({ active }) => {
   return (
     <HStack w="full" mb={4} justifyContent="space-between">
-      <Step step="1" title="Company Details" />
-      <Step step="2" title="Role Details" />
-      <Step step="3" title="Confirmation" />
+      <Step step={1} title="Company Details" active={active} />
+      <Step step={2} title="Role Details" active={active} />
+      <Step step={3} title="Confirmation" active={active} />
     </HStack>
   );
 };

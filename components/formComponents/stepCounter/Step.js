@@ -1,20 +1,23 @@
-import { HStack, Square, Text } from "@chakra-ui/react";
+import { Box, HStack, Square, Text } from "@chakra-ui/react";
+import { AiOutlineCheck } from "react-icons/ai";
 
-const Step = ({ step, title }) => {
+const Step = ({ step, title, active }) => {
+  const isActive = step === active + 1;
+
   return (
     <HStack>
       <Square
-        bg="gray.100"
+        bg={isActive ? "blue.500" : "gray.100"}
         h={12}
         w={12}
         rounded="md"
         fontSize="2xl"
         fontWeight="bold"
-        color="gray.500"
+        color={isActive ? "white" : "gray.500"}
       >
-        {step}
+        {step > active ? step : <Box as={AiOutlineCheck} />}
       </Square>
-      <Text>{title}</Text>
+      <Text color={isActive ? "gray.800" : "gray.600"}>{title}</Text>
     </HStack>
   );
 };

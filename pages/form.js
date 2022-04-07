@@ -50,7 +50,7 @@ const Form = () => {
     >
       <Heading>Propose a Bounty</Heading>
       <Card>
-        <StepCounter step={currentStep} />
+        {currentStep < steps.length - 1 && <StepCounter active={currentStep} />}
         {steps[currentStep]}
       </Card>
     </Flex>
