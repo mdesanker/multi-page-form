@@ -37,16 +37,17 @@ const ReturningCompanyForm = ({ next }) => {
 
           <TextField name="email" label="Admin Email" type="email" />
 
-          <HStack
+          <Flex
             justifyContent="flex-end"
+            alignItems="center"
             mt={8}
             borderTop="1px"
             borderTopColor="gray.300"
           >
-            <Button type="submit" colorScheme="blue" p={6} mt={6}>
+            <Button type="submit" colorScheme="blue" p={6} mt={6} w={44} h={12}>
               Next Step
             </Button>
-          </HStack>
+          </Flex>
         </Flex>
       )}
     </Formik>

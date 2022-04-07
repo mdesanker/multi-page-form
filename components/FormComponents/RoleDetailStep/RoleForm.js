@@ -1,4 +1,4 @@
-import { Button, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
 import { FieldArray, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -6,6 +6,7 @@ import { newRoleValidationSchema } from "../../../config/Validation";
 import { updateRoles } from "../../../store/slices/roleSlice";
 import TextAreaField from "../FieldComponents/TextAreaField";
 import TextField from "../FieldComponents/TextField";
+import FormHeading from "../sharedComponents/FormHeading";
 
 const RoleForm = ({ next, prev }) => {
   const dispatch = useDispatch();
@@ -41,15 +42,22 @@ const RoleForm = ({ next, prev }) => {
       }}
     >
       {(formik) => (
-        <VStack as={Form} onSubmit={formik.handleSubmit} w="full">
+        <Flex
+          direction="column"
+          as={Form}
+          onSubmit={formik.handleSubmit}
+          w="full"
+        >
+          <FormHeading step={2} label="Role Details" />
+
           <FieldArray name="roles">
             {({ remove, push }) => (
-              <VStack w="full">
+              <Flex direction="column" w="full">
                 {formik.values.roles.length > 0 &&
                   formik.values.roles.map((role, index) => (
-                    <VStack w="full" direction="column" key={index}>
-                      <Heading as="h2" fontSize="2xl">
-                        Role Details
+                    <Flex w="full" direction="column" key={index} mt={2}>
+                      <Heading as="h2" fontSize="xl">
+                        Role
                       </Heading>
 
                       <TextField
@@ -81,10 +89,14 @@ const RoleForm = ({ next, prev }) => {
                         name={`roles.${index}.description`}
                         label="Job Description"
                       />
-                      <Button type="button" onClick={() => remove(index)}>
-                        Remove
+                      <Button
+                        my={2}
+                        type="button"
+                        onClick={() => remove(index)}
+                      >
+                        Remove Role
                       </Button>
-                    </VStack>
+                    </Flex>
                   ))}
                 <Button
                   type="button"
@@ -101,23 +113,34 @@ const RoleForm = ({ next, prev }) => {
                 >
                   Add Role
                 </Button>
-              </VStack>
+              </Flex>
             )}
           </FieldArray>
-          <HStack>
+
+          <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            mt={8}
+            borderTop="1px"
+            borderTopColor="gray.300"
+          >
             <Button
               type="button"
               colorScheme="blue"
               variant="outline"
+              p={6}
+              mt={6}
+              w={44}
+              h={12}
               onClick={prev}
             >
-              Back
+              Previous Step
             </Button>
-            <Button type="submit" colorScheme="blue">
-              Submit
+            <Button type="submit" colorScheme="blue" p={6} mt={6} w={44} h={12}>
+              Next Step
             </Button>
-          </HStack>
-        </VStack>
+          </Flex>
+        </Flex>
       )}
     </Formik>
   );

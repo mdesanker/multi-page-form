@@ -11,9 +11,11 @@ const companySlice = createSlice({
   reducers: {
     setNew: (state) => {
       state.isNew = true;
+      state.details = null;
     },
     setReturning: (state) => {
       state.isNew = false;
+      state.details = null;
     },
     updateDetails: (state, { payload }) => {
       state.details = payload;
