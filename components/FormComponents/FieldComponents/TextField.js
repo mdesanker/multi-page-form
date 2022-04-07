@@ -13,6 +13,7 @@ const TextField = ({ label, ...props }) => {
       isInvalid={meta.error && meta.touched}
       mb={4}
       variant="floating"
+      isRequired
     >
       <Field as={Input} {...field} {...props} placeholder=" " />
       <FormLabel>{label}</FormLabel>

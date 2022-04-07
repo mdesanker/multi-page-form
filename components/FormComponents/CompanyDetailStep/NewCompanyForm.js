@@ -75,8 +75,6 @@ const NewCompanyForm = ({ next }) => {
 
           <TextField name="url" label="Company Website" />
 
-          <Divider borderColor="gray.300" py={2} />
-
           <TextField name="admin" label="Admin Name" />
 
           <TextField name="email" label="Admin Email" type="email" />

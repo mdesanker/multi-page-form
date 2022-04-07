@@ -9,7 +9,7 @@ import { Field, useField } from "formik";
 const SelectField = ({ label, options, ...props }) => {
   const [field, meta] = useField(props);
   return (
-    <FormControl isInvalid={meta.error && meta.touched}>
+    <FormControl isInvalid={meta.error && meta.touched} mb={4} isRequired>
       <FormLabel>{label}</FormLabel>
       <Field as={Select} name="size" {...field} {...props}>
         {options.map((option) => {
