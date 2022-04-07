@@ -37,7 +37,7 @@ const RoleForm = ({ next, prev }) => {
       validationSchema={newRoleValidationSchema}
       onSubmit={(values) => {
         dispatch(updateRoles(values.roles));
-        next(true);
+        next(false);
       }}
     >
       {(formik) => (

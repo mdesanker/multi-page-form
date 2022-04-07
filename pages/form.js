@@ -2,6 +2,7 @@ import { Flex, Heading } from "@chakra-ui/react";
 import { useState } from "react";
 import Card from "../components/Card";
 import CompanyDetailForm from "../components/formComponents/CompanyDetailForm";
+import Confirmation from "../components/formComponents/Confirmation";
 import RoleForm from "../components/formComponents/RoleForm";
 
 const Form = () => {
@@ -23,6 +24,7 @@ const Form = () => {
   const steps = [
     <CompanyDetailForm key={0} next={nextStepHandler} />,
     <RoleForm key={1} next={nextStepHandler} prev={prevStepHandler} />,
+    <Confirmation key={2} next={nextStepHandler} prev={prevStepHandler} />,
   ];
 
   return (
