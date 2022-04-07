@@ -6,7 +6,8 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Formik } from "formik";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   companySizeChoices,
   fundingStageChoices,
@@ -19,20 +20,30 @@ import TextField from "./fieldComponents/TextField";
 
 const NewCompanyForm = ({ next }) => {
   const dispatch = useDispatch();
+  const { details } = useSelector((state) => state.company);
+
+  const [initialValues, setInitialValues] = useState({
+    companyId: "",
+    name: "",
+    location: "",
+    policy: "",
+    size: "",
+    stage: "",
+    url: "",
+    admin: "",
+    email: "",
+  });
+
+  useEffect(() => {
+    if (details) {
+      setInitialValues(details);
+    }
+  }, []);
 
   return (
     <Formik
-      initialValues={{
-        companyId: "",
-        name: "",
-        location: "",
-        policy: "",
-        size: "",
-        stage: "",
-        url: "",
-        admin: "",
-        email: "",
-      }}
+      enableReinitialize="true"
+      initialValues={initialValues}
       validationSchema={newCompanyValidationSchema}
       onSubmit={(values) => {
         dispatch(updateDetails(values));
