@@ -48,8 +48,10 @@ const Form = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Heading mt={4}>Propose a Bounty</Heading>
-      <Text mb={4}>
+      <Heading mt={4} textAlign="center">
+        Propose a Bounty
+      </Heading>
+      <Text mb={4} textAlign="center">
         Talentdrop reviews and approves new bounty companies on a rolling basis.{" "}
         <Text as="span" fontWeight="semibold" color="blue.500" cursor="pointer">
           Learn more.
