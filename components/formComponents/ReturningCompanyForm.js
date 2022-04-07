@@ -1,10 +1,14 @@
 import { Button, Heading, VStack } from "@chakra-ui/react";
 import { Formik } from "formik";
 import next from "next";
+import { useDispatch } from "react-redux";
 import { returningCompanyValidationSchema } from "../../config/Validation";
+import { updateDetails } from "../../store/slices/companySlice";
 import TextField from "./fieldComponents/TextField";
 
 const ReturningCompanyForm = ({ next }) => {
+  const dispatch = useDispatch();
+
   return (
     <Formik
       initialValues={{
@@ -13,7 +17,7 @@ const ReturningCompanyForm = ({ next }) => {
       }}
       validationSchema={returningCompanyValidationSchema}
       onSubmit={(values) => {
-        alert(JSON.stringify(values, null, 2));
+        dispatch(updateDetails(values));
         next(false);
       }}
     >

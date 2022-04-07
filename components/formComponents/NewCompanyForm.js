@@ -6,16 +6,20 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { Formik } from "formik";
+import { useDispatch } from "react-redux";
 import {
   companySizeChoices,
   fundingStageChoices,
   remotePolicyChoices,
 } from "../../config/SelectFieldOptions";
 import { newCompanyValidationSchema } from "../../config/Validation";
+import { updateDetails } from "../../store/slices/companySlice";
 import SelectField from "./fieldComponents/SelectField";
 import TextField from "./fieldComponents/TextField";
 
 const NewCompanyForm = ({ next }) => {
+  const dispatch = useDispatch();
+
   return (
     <Formik
       initialValues={{
@@ -31,7 +35,7 @@ const NewCompanyForm = ({ next }) => {
       }}
       validationSchema={newCompanyValidationSchema}
       onSubmit={(values) => {
-        alert(JSON.stringify(values, null, 2));
+        dispatch(updateDetails(values));
         next(false);
       }}
     >
