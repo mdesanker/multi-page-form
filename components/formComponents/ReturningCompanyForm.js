@@ -34,10 +34,6 @@ const ReturningCompanyForm = ({ next }) => {
     >
       {(formik) => (
         <VStack as="form" onSubmit={formik.handleSubmit}>
-          <Heading as="h2" fontSize="2xl">
-            Returning Company Details
-          </Heading>
-
           <TextField name="companyId" label="Comapny ID" />
 
           <TextField name="email" label="Admin Email" type="email" />

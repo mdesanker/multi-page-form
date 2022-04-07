@@ -52,10 +52,6 @@ const NewCompanyForm = ({ next }) => {
     >
       {(formik) => (
         <VStack as="form" onSubmit={formik.handleSubmit}>
-          <Heading as="h2" fontSize="2xl">
-            New Company Details
-          </Heading>
-
           <TextField name="companyId" label="Company ID" />
 
           <TextField name="name" label="Company Name" />
