@@ -3,10 +3,7 @@ import TextOutput from "./TextOutput";
 
 const CompanyDetailSummary = ({ data }) => {
   return (
-    <VStack w="full" alignItems="flex-start">
-      <Heading as="h3" fontSize="2xl" w="full" textAlign="center">
-        Company Details
-      </Heading>
+    <VStack w="full" alignItems="flex-start" p={2}>
       <TextOutput label="Company ID" value={data.companyId} />
       <TextOutput label="Company Name" value={data.name} />
       <TextOutput label="Location" value={data.location} />
