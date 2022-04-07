@@ -26,7 +26,7 @@ const Confirmation = ({ next, prev }) => {
           return <RoleDetailSummary key={uuidv4()} data={role} />;
         })}
       <Button onClick={prev}>Previous</Button>
-      <Button onClick={() => next(true)}>Confirm</Button>
+      <Button onClick={() => next(false)}>Confirm</Button>
     </VStack>
   );
 };

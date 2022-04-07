@@ -4,6 +4,7 @@ import Card from "../components/Card";
 import CompanyDetailForm from "../components/formComponents/CompanyDetailForm";
 import Confirmation from "../components/formComponents/Confirmation";
 import RoleForm from "../components/formComponents/RoleForm";
+import Success from "../components/formComponents/Success";
 
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -25,6 +26,7 @@ const Form = () => {
     <CompanyDetailForm key={0} next={nextStepHandler} />,
     <RoleForm key={1} next={nextStepHandler} prev={prevStepHandler} />,
     <Confirmation key={2} next={nextStepHandler} prev={prevStepHandler} />,
+    <Success key={3} next={nextStepHandler} />,
   ];
 
   return (
