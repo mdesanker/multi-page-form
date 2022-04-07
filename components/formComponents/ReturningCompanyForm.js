@@ -1,20 +1,31 @@
 import { Button, Heading, VStack } from "@chakra-ui/react";
 import { Formik } from "formik";
 import next from "next";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { returningCompanyValidationSchema } from "../../config/Validation";
 import { updateDetails } from "../../store/slices/companySlice";
 import TextField from "./fieldComponents/TextField";
 
 const ReturningCompanyForm = ({ next }) => {
   const dispatch = useDispatch();
+  const { details } = useSelector((state) => state.company);
+
+  const [initialValues, setInitialValues] = useState({
+    companyId: "",
+    email: "",
+  });
+
+  useEffect(() => {
+    if (details) {
+      setInitialValues(details);
+    }
+  }, []);
 
   return (
     <Formik
-      initialValues={{
-        companyId: "",
-        email: "",
-      }}
+      enableReinitialize="true"
+      initialValues={initialValues}
       validationSchema={returningCompanyValidationSchema}
       onSubmit={(values) => {
         dispatch(updateDetails(values));
