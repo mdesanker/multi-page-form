@@ -5,6 +5,7 @@ import RoleDetailSummary from "./confirmationComponents/RoleDetailSummary";
 import { v4 as uuidv4 } from "uuid";
 import { companyReset } from "../../store/slices/companySlice";
 import { rolesReset } from "../../store/slices/roleSlice";
+import ConfirmationSectionHeader from "./confirmationComponents/ConfirmationSectionHeader";
 
 const Confirmation = ({ next, prev }) => {
   const dispatch = useDispatch();
@@ -29,13 +30,9 @@ const Confirmation = ({ next, prev }) => {
       <Text>
         Thank you for completing the form! Review your entry details below.
       </Text>
-      <Heading as="h3" fontSize="2xl" w="full" textAlign="center">
-        Company Details
-      </Heading>
+      <ConfirmationSectionHeader title="Company Details" page={0} />
       <CompanyDetailSummary data={details} />
-      <Heading as="h3" fontSize="2xl" w="full" textAlign="center">
-        Role Details
-      </Heading>
+      <ConfirmationSectionHeader title="Role Details" page={1} />
       {roles &&
         roles.map((role, index) => {
           return <RoleDetailSummary key={uuidv4()} data={role} />;
