@@ -1,4 +1,4 @@
-import { Button, Heading, VStack } from "@chakra-ui/react";
+import { Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
 import { Formik } from "formik";
 import next from "next";
 import { useEffect, useState } from "react";
@@ -33,15 +33,22 @@ const ReturningCompanyForm = ({ next }) => {
       }}
     >
       {(formik) => (
-        <VStack as="form" onSubmit={formik.handleSubmit}>
+        <Flex direction="column" as="form" onSubmit={formik.handleSubmit}>
           <TextField name="companyId" label="Comapny ID" />
 
           <TextField name="email" label="Admin Email" type="email" />
 
-          <Button type="submit" colorScheme="blue">
-            Next Step
-          </Button>
-        </VStack>
+          <HStack
+            justifyContent="flex-end"
+            mt={8}
+            borderTop="1px"
+            borderTopColor="gray.300"
+          >
+            <Button type="submit" colorScheme="blue" p={6} mt={6}>
+              Next Step
+            </Button>
+          </HStack>
+        </Flex>
       )}
     </Formik>
   );

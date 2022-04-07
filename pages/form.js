@@ -1,4 +1,4 @@
-import { Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Card from "../components/Card";
 import CompanyDetailForm from "../components/formComponents/CompanyDetailForm";
@@ -48,7 +48,13 @@ const Form = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Heading>Propose a Bounty</Heading>
+      <Heading mt={4}>Propose a Bounty</Heading>
+      <Text mb={4}>
+        Talentdrop reviews and approves new bounty companies on a rolling basis.{" "}
+        <Text as="span" fontWeight="semibold" color="blue.500" cursor="pointer">
+          Learn more.
+        </Text>
+      </Text>
       <Card>
         {currentStep < steps.length - 1 && <StepCounter active={currentStep} />}
         {steps[currentStep]}

@@ -1,7 +1,9 @@
 import {
   Button,
   Divider,
+  Flex,
   Heading,
+  HStack,
   StackDivider,
   VStack,
 } from "@chakra-ui/react";
@@ -51,7 +53,7 @@ const NewCompanyForm = ({ next }) => {
       }}
     >
       {(formik) => (
-        <VStack as="form" onSubmit={formik.handleSubmit}>
+        <Flex direction="column" as="form" onSubmit={formik.handleSubmit}>
           <TextField name="companyId" label="Company ID" />
 
           <TextField name="name" label="Company Name" />
@@ -87,10 +89,17 @@ const NewCompanyForm = ({ next }) => {
 
           <TextField name="email" label="Admin Email" type="email" />
 
-          <Button type="submit" colorScheme="blue">
-            Next Step
-          </Button>
-        </VStack>
+          <HStack
+            justifyContent="flex-end"
+            mt={8}
+            borderTop="1px"
+            borderTopColor="gray.300"
+          >
+            <Button type="submit" colorScheme="blue" p={6} mt={6}>
+              Next Step
+            </Button>
+          </HStack>
+        </Flex>
       )}
     </Formik>
   );

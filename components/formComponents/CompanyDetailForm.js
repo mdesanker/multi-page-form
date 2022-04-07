@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Button, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { setNew, setReturning } from "../../store/slices/companySlice";
 import CustomButton from "./CompanyDetail/CustomButton";
@@ -20,7 +20,7 @@ const CompanyDetailForm = ({ next }) => {
 
   return (
     <Flex direction="column" justifyContent="center" w="full">
-      <HStack justifyContent="center" px={16} mb={6}>
+      <HStack justifyContent="space-around" mb={6}>
         <CustomButton clickHander={newHandler} active={isNew}>
           New
         </CustomButton>
@@ -29,7 +29,10 @@ const CompanyDetailForm = ({ next }) => {
         </CustomButton>
       </HStack>
 
-      <Heading as="h2" fontSize="2xl">
+      <Text color="gray.500" py={2}>
+        Step 1/3
+      </Text>
+      <Heading as="h2" fontSize="2xl" pb={6}>
         Company Details
       </Heading>
 
