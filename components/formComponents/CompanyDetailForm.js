@@ -20,13 +20,19 @@ const CompanyDetailForm = ({ next }) => {
 
   return (
     <Flex direction="column" justifyContent="center" w="full">
-      <Heading as="h2" fontSize="2xl" textAlign="center">
+      <HStack justifyContent="center" px={16} mb={6}>
+        <CustomButton clickHander={newHandler} active={isNew}>
+          New
+        </CustomButton>
+        <CustomButton clickHander={returningHandler} active={!isNew}>
+          Returning
+        </CustomButton>
+      </HStack>
+
+      <Heading as="h2" fontSize="2xl">
         Company Details
       </Heading>
-      <HStack justifyContent="space-around" px={16}>
-        <CustomButton clickHander={newHandler}>New</CustomButton>
-        <CustomButton clickHander={returningHandler}>Returning</CustomButton>
-      </HStack>
+
       {isNew ? (
         <NewCompanyForm next={next} />
       ) : (
