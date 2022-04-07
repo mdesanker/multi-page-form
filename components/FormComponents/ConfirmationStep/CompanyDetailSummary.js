@@ -1,4 +1,4 @@
-import { Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import TextOutput from "./TextOutput";
 
@@ -6,7 +6,7 @@ const CompanyDetailSummary = ({ data }) => {
   const { isNew } = useSelector((state) => state.company);
 
   return (
-    <VStack w="full" alignItems="flex-start" p={2}>
+    <Flex direction="column" gap={1} w="full" alignItems="flex-start" p={2}>
       <TextOutput label="Company ID" value={data.companyId} />
       {isNew && (
         <>
@@ -20,7 +20,7 @@ const CompanyDetailSummary = ({ data }) => {
         </>
       )}
       <TextOutput label="Admin Email" value={data.email} />
-    </VStack>
+    </Flex>
   );
 };
 
