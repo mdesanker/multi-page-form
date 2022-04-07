@@ -9,9 +9,13 @@ import { Field, useField } from "formik";
 const TextField = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
-    <FormControl isInvalid={meta.error && meta.touched}>
+    <FormControl
+      isInvalid={meta.error && meta.touched}
+      mb={4}
+      variant="floating"
+    >
+      <Field as={Input} {...field} {...props} placeholder=" " />
       <FormLabel>{label}</FormLabel>
-      <Field as={Input} {...field} {...props} />
       <FormErrorMessage>{meta.error}</FormErrorMessage>
     </FormControl>
   );
