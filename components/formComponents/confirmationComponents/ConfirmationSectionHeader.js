@@ -2,11 +2,7 @@ import { Box, Button, Divider, Flex, Heading, Square } from "@chakra-ui/react";
 import NextLink from "next/link";
 import { AiFillEdit } from "react-icons/ai";
 
-const ConfirmationSectionHeader = ({ title, page }) => {
-  const editHandler = () => {
-    console.log(page);
-  };
-
+const ConfirmationSectionHeader = ({ title, page, set }) => {
   return (
     <Flex
       w="full"
@@ -19,7 +15,7 @@ const ConfirmationSectionHeader = ({ title, page }) => {
       <Heading as="h3" fontSize="2xl">
         {title}
       </Heading>
-      <Button variant="ghost" role="group" onClick={editHandler}>
+      <Button variant="ghost" role="group" onClick={() => set(page)}>
         <Box
           as={AiFillEdit}
           h={6}

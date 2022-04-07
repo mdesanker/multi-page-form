@@ -7,7 +7,7 @@ import { companyReset } from "../../store/slices/companySlice";
 import { rolesReset } from "../../store/slices/roleSlice";
 import ConfirmationSectionHeader from "./confirmationComponents/ConfirmationSectionHeader";
 
-const Confirmation = ({ next, prev }) => {
+const Confirmation = ({ next, prev, set }) => {
   const dispatch = useDispatch();
 
   const { details } = useSelector((state) => state.company);
@@ -30,9 +30,9 @@ const Confirmation = ({ next, prev }) => {
       <Text>
         Thank you for completing the form! Review your entry details below.
       </Text>
-      <ConfirmationSectionHeader title="Company Details" page={0} />
+      <ConfirmationSectionHeader title="Company Details" page={0} set={set} />
       <CompanyDetailSummary data={details} />
-      <ConfirmationSectionHeader title="Role Details" page={1} />
+      <ConfirmationSectionHeader title="Role Details" page={1} set={set} />
       {roles &&
         roles.map((role, index) => {
           return <RoleDetailSummary key={uuidv4()} data={role} />;

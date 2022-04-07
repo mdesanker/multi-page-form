@@ -22,10 +22,19 @@ const Form = () => {
     setCurrentStep(currentStep - 1);
   }
 
+  function setStepHandler(step) {
+    setCurrentStep(step);
+  }
+
   const steps = [
     <CompanyDetailForm key={0} next={nextStepHandler} />,
     <RoleForm key={1} next={nextStepHandler} prev={prevStepHandler} />,
-    <Confirmation key={2} next={nextStepHandler} prev={prevStepHandler} />,
+    <Confirmation
+      key={2}
+      next={nextStepHandler}
+      prev={prevStepHandler}
+      set={setStepHandler}
+    />,
     <Success key={3} next={nextStepHandler} />,
   ];
 
