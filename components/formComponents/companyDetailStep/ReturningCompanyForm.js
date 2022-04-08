@@ -29,7 +29,7 @@ const ReturningCompanyForm = ({ next }) => {
       validationSchema={returningCompanyValidationSchema}
       onSubmit={(values) => {
         dispatch(updateDetails(values));
-        next(false);
+        next(values);
       }}
     >
       {(formik) => (

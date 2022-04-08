@@ -7,6 +7,7 @@ import StepCounter from "../components/formComponents/stepCounter/StepCounter";
 import Success from "../components/formComponents/successStep/Success";
 import { v4 as uuidv4 } from "uuid";
 import Confirmation from "../components/formComponents/confirmationStep/Confirmation";
+import FormHeader from "../components/FormHeader";
 
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -47,15 +48,7 @@ const Form = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <Heading mt={4} textAlign="center">
-        Propose a Bounty
-      </Heading>
-      <Text mb={4} textAlign="center">
-        Talentdrop reviews and approves new bounty companies on a rolling basis.{" "}
-        <Text as="span" fontWeight="semibold" color="blue.500" cursor="pointer">
-          Learn more.
-        </Text>
-      </Text>
+      <FormHeader />
       <Card>
         {currentStep < steps.length - 1 && <StepCounter active={currentStep} />}
         {steps[currentStep]}
