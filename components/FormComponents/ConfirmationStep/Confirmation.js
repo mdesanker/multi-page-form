@@ -8,6 +8,7 @@ import { rolesReset } from "../../../store/slices/roleSlice";
 import ConfirmationSectionHeader from "./ConfirmationSectionHeader";
 import FormHeading from "../sharedComponents/FormHeading";
 import NextButton from "../sharedComponents/NextButton";
+import PrevButton from "../sharedComponents/PrevButton";
 
 const Confirmation = ({ next, prev, set }) => {
   const dispatch = useDispatch();
@@ -48,18 +49,7 @@ const Confirmation = ({ next, prev, set }) => {
         borderTop="1px"
         borderTopColor="gray.300"
       >
-        <Button
-          type="button"
-          colorScheme="blue"
-          variant="outline"
-          p={6}
-          mt={6}
-          w={44}
-          h={12}
-          onClick={prev}
-        >
-          Previous
-        </Button>
+        <PrevButton type="button" text="Previous" clickHandler={prev} />
         <NextButton type="submit" text="Submit" clickHandler={confirmHandler} />
       </Flex>
     </Flex>

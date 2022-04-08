@@ -8,6 +8,7 @@ import TextAreaField from "../FieldComponents/TextAreaField";
 import TextField from "../FieldComponents/TextField";
 import FormHeading from "../sharedComponents/FormHeading";
 import NextButton from "../sharedComponents/NextButton";
+import PrevButton from "../sharedComponents/PrevButton";
 
 const RoleForm = ({ next, prev }) => {
   const dispatch = useDispatch();
@@ -125,18 +126,7 @@ const RoleForm = ({ next, prev }) => {
             borderTop="1px"
             borderTopColor="gray.300"
           >
-            <Button
-              type="button"
-              colorScheme="blue"
-              variant="outline"
-              p={6}
-              mt={6}
-              w={44}
-              h={12}
-              onClick={prev}
-            >
-              Previous Step
-            </Button>
+            <PrevButton type="button" text="Previous" clickHandler={prev} />
             <NextButton type="submit" text="Next" />
           </Flex>
         </Flex>
