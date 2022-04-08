@@ -11,12 +11,15 @@ const TextField = ({ label, ...props }) => {
   return (
     <FormControl
       isInvalid={meta.error && meta.touched}
-      mb={4}
+      mb={6}
       variant="floating"
       isRequired
+      role="group"
     >
       <Field as={Input} {...field} {...props} placeholder=" " />
-      <FormLabel>{label}</FormLabel>
+      <FormLabel color="gray.600" _groupFocusWithin={{ color: "blue.500" }}>
+        {label}
+      </FormLabel>
       <FormErrorMessage>{meta.error}</FormErrorMessage>
     </FormControl>
   );

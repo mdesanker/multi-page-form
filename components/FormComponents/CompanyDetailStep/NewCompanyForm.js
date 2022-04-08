@@ -55,21 +55,18 @@ const NewCompanyForm = ({ next }) => {
           <SelectField
             name="policy"
             label="Remote Policy"
-            placeholder="Choose option"
             options={remotePolicyChoices}
           />
 
           <SelectField
             name="size"
             label="Company Size"
-            placeholder="Choose option"
             options={companySizeChoices}
           />
 
           <SelectField
             name="stage"
             label="Funding Stage"
-            placeholder="Choose option"
             options={fundingStageChoices}
           />
 

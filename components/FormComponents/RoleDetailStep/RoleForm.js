@@ -56,7 +56,7 @@ const RoleForm = ({ next, prev }) => {
                 {formik.values.roles.length > 0 &&
                   formik.values.roles.map((role, index) => (
                     <Flex w="full" direction="column" key={index} mt={2}>
-                      <Heading as="h2" fontSize="xl">
+                      <Heading as="h2" fontSize="xl" mb={3}>
                         Role
                       </Heading>
 
@@ -82,7 +82,7 @@ const RoleForm = ({ next, prev }) => {
 
                       <TextField
                         name={`roles.${index}.experience`}
-                        label="Desired Experience (years)"
+                        label="Required Experience (years)"
                       />
 
                       <TextAreaField
