@@ -8,6 +8,17 @@ export const newCompanyValidationSchema = Yup.object({
       "Company ID must start with at least two letters and contain only letters and digits"
     )
     .required("Company ID is required"),
+
+  // Async validator to check whether company ID is unique
+
+  // .test("checkIdUnique", "This ID is already registered", (value) =>
+  //   fetch(`/isunique/${companyId}`).then(async (res) => {
+  //     const { isIdUnique } = await res.json();
+
+  //     return isIdUnique;
+  //   })
+  // ),
+
   name: Yup.string().required("Company name is required"),
   location: Yup.string().required("Location is required"),
   policy: Yup.string().required("Remote policy is required"),
@@ -28,9 +39,14 @@ export const returningCompanyValidationSchema = Yup.object({
       "Company ID must start with at least two letters and contain only letters and digits"
     )
     .required("Company ID is required"),
+
+  // Same async validator used here to check that company ID exists in database
+
   email: Yup.string()
     .email("Invalid email address")
     .required("Admin email address is required"),
+
+  // Async validator to check that email address matches the company ID in database
 });
 
 export const newRoleValidationSchema = Yup.object({

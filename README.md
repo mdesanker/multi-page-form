@@ -14,9 +14,9 @@ Whether to have 1 large form or two separate forms
 
 - \*Reset form counter if company state === null
 
-- Name input validation
+- \*Name input validation
 
-- Async validation to check if name unique
+- \*Async validation to check if name unique
 
 - Readme
 
