@@ -11,11 +11,15 @@ const SelectField = ({ label, options, ...props }) => {
   return (
     <FormControl
       isInvalid={meta.error && meta.touched}
-      mb={4}
+      mb={6}
       isRequired
       role="group"
     >
-      <FormLabel color="gray.600" _groupFocusWithin={{ color: "blue.500" }}>
+      <FormLabel
+        color="gray.600"
+        mb={1}
+        _groupFocusWithin={{ color: "blue.500" }}
+      >
         {label}
       </FormLabel>
       <Field

@@ -91,7 +91,16 @@ const NewCompanyForm = ({ next }) => {
             borderTop="1px"
             borderTopColor="gray.300"
           >
-            <Button type="submit" colorScheme="blue" p={6} mt={6} w={44} h={12}>
+            <Button
+              type="submit"
+              colorScheme="blue"
+              p={6}
+              mt={6}
+              w={44}
+              h={12}
+              border="1px"
+              borderColor="blue.500"
+            >
               Next Step
             </Button>
           </Flex>

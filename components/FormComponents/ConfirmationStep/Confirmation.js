@@ -57,7 +57,7 @@ const Confirmation = ({ next, prev, set }) => {
           h={12}
           onClick={prev}
         >
-          Edit
+          Previous
         </Button>
         <Button
           type="button"
@@ -66,9 +66,11 @@ const Confirmation = ({ next, prev, set }) => {
           mt={6}
           w={44}
           h={12}
+          border="1px"
+          borderColor="blue.500"
           onClick={confirmHandler}
         >
-          Confirm
+          Submit
         </Button>
       </Flex>
     </Flex>
