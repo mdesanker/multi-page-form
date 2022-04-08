@@ -1,7 +1,6 @@
-import { Button, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import CompanyDetailSummary from "./CompanyDetailSummary";
-import RoleDetailSummary from "./RoleDetailSummary";
 import { v4 as uuidv4 } from "uuid";
 import { companyReset } from "../../../store/slices/companySlice";
 import { rolesReset } from "../../../store/slices/roleSlice";
@@ -9,6 +8,7 @@ import ConfirmationSectionHeader from "./ConfirmationSectionHeader";
 import FormHeading from "../sharedComponents/FormHeading";
 import NextButton from "../sharedComponents/NextButton";
 import PrevButton from "../sharedComponents/PrevButton";
+import RoleDetailSummary from "./RoleDetailSummary";
 
 const Confirmation = ({ next, prev, set }) => {
   const dispatch = useDispatch();

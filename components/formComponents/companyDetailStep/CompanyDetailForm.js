@@ -1,10 +1,6 @@
-import { Flex, Heading, HStack, Text } from "@chakra-ui/react";
+import { Flex, HStack } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  companyReset,
-  setNew,
-  setReturning,
-} from "../../../store/slices/companySlice";
+import { setNew, setReturning } from "../../../store/slices/companySlice";
 import FormHeading from "../sharedComponents/FormHeading";
 import CompanyTypeBtn from "./CompanyTypeBtn";
 import NewCompanyForm from "./NewCompanyForm";

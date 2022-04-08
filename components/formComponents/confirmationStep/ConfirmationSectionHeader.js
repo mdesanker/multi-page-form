@@ -1,5 +1,4 @@
-import { Box, Button, Divider, Flex, Heading, Square } from "@chakra-ui/react";
-import NextLink from "next/link";
+import { Box, Button, Flex, Heading } from "@chakra-ui/react";
 import { RiPencilFill } from "react-icons/ri";
 
 const ConfirmationSectionHeader = ({ title, page, set }) => {

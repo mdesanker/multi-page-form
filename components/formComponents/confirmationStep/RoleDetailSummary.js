@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import TextOutput from "./TextOutput";
 
 const RoleDetailSummary = ({ data }) => {

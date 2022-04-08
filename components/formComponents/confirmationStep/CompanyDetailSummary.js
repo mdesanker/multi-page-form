@@ -1,4 +1,4 @@
-import { Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
 import TextOutput from "./TextOutput";
 
