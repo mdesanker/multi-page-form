@@ -21,7 +21,7 @@ const companySlice = createSlice({
       state.details = payload;
     },
     companyReset: (state) => {
-      state.isNew = false;
+      state.isNew = true;
       state.details = null;
     },
   },
