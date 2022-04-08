@@ -73,7 +73,9 @@ const RoleForm = ({ next, prev }) => {
                         <Button
                           variant="ghost"
                           role="group"
-                          onClick={() => remove(index)}
+                          onClick={() =>
+                            formik.values.roles.length > 1 && remove(index)
+                          }
                         >
                           <Box
                             as={BiTrash}
