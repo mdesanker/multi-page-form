@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="css-umsz9e"
+  >
+    <button
+      class="chakra-button css-5c2176"
+      href="/form"
+      type="button"
+    >
+      Create a Bounty
+    </button>
+  </div>
+</div>
+`;
