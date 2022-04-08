@@ -16,14 +16,17 @@ const Form = () => {
       return;
     }
 
+    window.scrollTo(0, 0);
     setCurrentStep(currentStep + 1);
   }
 
   function prevStepHandler() {
+    window.scrollTo(0, 0);
     setCurrentStep(currentStep - 1);
   }
 
   function setStepHandler(step) {
+    window.scrollTo(0, 0);
     setCurrentStep(step);
   }
 

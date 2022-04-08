@@ -23,3 +23,5 @@ Whether to have 1 large form or two separate forms
 - Testing
 
 - Handle file upload
+
+//TODO: Scroll to top of page on navigation
