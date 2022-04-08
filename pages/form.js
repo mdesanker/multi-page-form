@@ -1,11 +1,11 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import Card from "../components/Card";
-import CompanyDetailForm from "../components/FormComponents/CompanyDetailStep/CompanyDetailForm";
-import Confirmation from "../components/FormComponents/ConfirmationStep/Confirmation";
-import RoleForm from "../components/FormComponents/RoleDetailStep/RoleForm";
-import StepCounter from "../components/FormComponents/StepCounter/StepCounter";
-import Success from "../components/FormComponents/SuccessStep/Success";
+import CompanyDetailForm from "../components/formComponents/companyDetailStep/CompanyDetailForm";
+import Confirmation from "../components/formComponents/confirmationStep/Confirmation";
+import RoleForm from "../components/formComponents/roleDetailStep/RoleForm";
+import StepCounter from "../components/formComponents/stepCounter/StepCounter";
+import Success from "../components/formComponents/successStep/Success";
 import { v4 as uuidv4 } from "uuid";
 
 const Form = () => {
