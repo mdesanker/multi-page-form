@@ -1,6 +1,6 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 
-const FormHeading = ({ step, label, sublabel }) => {
+const FormHeader = ({ step, label, sublabel }) => {
   return (
     <Flex direction="column" mb={3}>
       <Text color="gray.500" py={2}>
@@ -14,4 +14,4 @@ const FormHeading = ({ step, label, sublabel }) => {
   );
 };
 
-export default FormHeading;
+export default FormHeader;

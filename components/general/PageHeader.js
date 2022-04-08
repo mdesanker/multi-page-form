@@ -1,6 +1,6 @@
 import { Heading, Text } from "@chakra-ui/react";
 
-const FormHeader = () => {
+const PageHeader = () => {
   return (
     <>
       <Heading mt={4} textAlign="center">
@@ -16,4 +16,4 @@ const FormHeader = () => {
   );
 };
 
-export default FormHeader;
+export default PageHeader;

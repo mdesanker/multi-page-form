@@ -1,7 +1,7 @@
 import Head from "next/head";
 import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import Layout from "../components/Layout";
+import Layout from "../components/general/Layout";
 import { Provider } from "react-redux";
 import store from "../store/store";
 import { theme } from "../styles/theme";

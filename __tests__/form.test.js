@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, waitFor } from "../config/TestUtils";
 import "@testing-library/jest-dom";
-import MultiStepForm from "../components/MultiStepForm";
+import Form from "../pages/form";
 
 describe("Form", () => {
   it("renders new company version of first page", () => {
-    render(<MultiStepForm />);
+    render(<Form />);
 
     const newBtn = screen.getByRole("button", { name: /new/i });
 
@@ -17,7 +17,7 @@ describe("Form", () => {
   });
 
   it("typing into text inputs udpates them", () => {
-    render(<MultiStepForm />);
+    render(<Form />);
 
     const comapanyIdInput = screen.getByLabelText(/Company ID/i);
     const companyNameInput = screen.getByLabelText(/Company Name/i);
@@ -49,7 +49,7 @@ describe("Form", () => {
   });
 
   it("renders returning company page version of first page", async () => {
-    render(<MultiStepForm />);
+    render(<Form />);
 
     const returningBtn = screen.getByRole("button", { name: /returning/i });
 

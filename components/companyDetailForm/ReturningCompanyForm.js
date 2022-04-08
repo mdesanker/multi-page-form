@@ -2,10 +2,10 @@ import { Flex } from "@chakra-ui/react";
 import { Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { returningCompanyValidationSchema } from "../../../config/Validation";
-import { updateDetails } from "../../../store/slices/companySlice";
+import { returningCompanyValidationSchema } from "../../config/Validation";
+import { updateDetails } from "../../store/slices/companySlice";
 import TextField from "../fieldComponents/TextField";
-import NextButton from "../sharedComponents/NextButton";
+import NextButton from "../general/NextButton";
 
 const ReturningCompanyForm = ({ next }) => {
   const dispatch = useDispatch();

@@ -1,7 +1,7 @@
 import { Flex, HStack } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { setNew, setReturning } from "../../../store/slices/companySlice";
-import FormHeading from "../sharedComponents/FormHeading";
+import { setNew, setReturning } from "../../store/slices/companySlice";
+import FormHeader from "../general/FormHeader";
 import CompanyTypeBtn from "./CompanyTypeBtn";
 import NewCompanyForm from "./NewCompanyForm";
 import ReturningCompanyForm from "./ReturningCompanyForm";
@@ -30,7 +30,7 @@ const CompanyDetailForm = ({ next }) => {
         </CompanyTypeBtn>
       </HStack>
 
-      <FormHeading step={1} label="Company Details" />
+      <FormHeader step={1} label="Company Details" />
 
       <Flex mt={5} direction="column">
         {isNew ? (

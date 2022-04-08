@@ -2,16 +2,16 @@ import { Box, Button, Flex, Heading, Square } from "@chakra-ui/react";
 import { FieldArray, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { newRoleValidationSchema } from "../../../config/Validation";
-import { updateRoles } from "../../../store/slices/roleSlice";
+import { newRoleValidationSchema } from "../../config/Validation";
+import { updateRoles } from "../../store/slices/roleSlice";
 import TextAreaField from "../fieldComponents/TextAreaField";
 import TextField from "../fieldComponents/TextField";
-import FormHeading from "../sharedComponents/FormHeading";
-import NextButton from "../sharedComponents/NextButton";
-import PrevButton from "../sharedComponents/PrevButton";
+import FormHeader from "../general/FormHeader";
 import { BiTrash } from "react-icons/bi";
+import PrevButton from "../general/NextButton";
+import NextButton from "../general/NextButton";
 
-const RoleForm = ({ next, prev }) => {
+const RoleDetailForm = ({ next, prev }) => {
   const dispatch = useDispatch();
   const { roles } = useSelector((state) => state.role);
 
@@ -51,7 +51,7 @@ const RoleForm = ({ next, prev }) => {
           onSubmit={formik.handleSubmit}
           w="full"
         >
-          <FormHeading step={2} label="Role Details" />
+          <FormHeader step={2} label="Role Details" />
 
           <FieldArray name="roles">
             {({ remove, push }) => (
@@ -158,4 +158,4 @@ const RoleForm = ({ next, prev }) => {
   );
 };
 
-export default RoleForm;
+export default RoleDetailForm;

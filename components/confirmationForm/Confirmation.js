@@ -2,13 +2,13 @@ import { Flex } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import CompanyDetailSummary from "./CompanyDetailSummary";
 import { v4 as uuidv4 } from "uuid";
-import { companyReset } from "../../../store/slices/companySlice";
-import { rolesReset } from "../../../store/slices/roleSlice";
+import { companyReset } from "../../store/slices/companySlice";
+import { rolesReset } from "../../store/slices/roleSlice";
 import ConfirmationSectionHeader from "./ConfirmationSectionHeader";
-import FormHeading from "../sharedComponents/FormHeading";
-import NextButton from "../sharedComponents/NextButton";
-import PrevButton from "../sharedComponents/PrevButton";
+import FormHeader from "../general/FormHeader";
 import RoleDetailSummary from "./RoleDetailSummary";
+import NextButton from "../general/NextButton";
+import PrevButton from "../general/PrevButton";
 
 const Confirmation = ({ next, prev, set }) => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const Confirmation = ({ next, prev, set }) => {
 
   return (
     <Flex direction="column" w="full">
-      <FormHeading
+      <FormHeader
         step={3}
         label="Confirmation"
         sublabel="Thank you for completing the form! Review your entry details below."

@@ -1,18 +1,18 @@
 import { Flex, Heading, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import Card from "../components/Card";
-import CompanyDetailForm from "../components/formComponents/companyDetailStep/CompanyDetailForm";
-import RoleForm from "../components/formComponents/roleDetailStep/RoleForm";
-import StepCounter from "../components/formComponents/stepCounter/StepCounter";
-import Success from "../components/formComponents/successStep/Success";
+import Card from "../components/general/Card";
+import CompanyDetailForm from "../components/companyDetailForm/CompanyDetailForm";
+import RoleDetailForm from "../components/roleDetailForm/RoleDetailForm";
+import StepCounter from "../components/stepCounter/StepCounter";
+import Success from "../components/successPage/Success";
 import { v4 as uuidv4 } from "uuid";
-import Confirmation from "../components/formComponents/confirmationStep/Confirmation";
-import FormHeader from "../components/FormHeader";
+import Confirmation from "../components/confirmationForm/Confirmation";
+import PageHeader from "../components/general/PageHeader";
 
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
-  function nextStepHandler() {
+  function submitHandler() {
     window.scrollTo(0, 0);
     setCurrentStep(currentStep + 1);
   }
@@ -28,15 +28,19 @@ const Form = () => {
   }
 
   const steps = [
-    <CompanyDetailForm key={uuidv4()} next={nextStepHandler} />,
-    <RoleForm key={uuidv4()} next={nextStepHandler} prev={prevStepHandler} />,
+    <CompanyDetailForm key={uuidv4()} onSubmit={submitHandler} />,
+    <RoleDetailForm
+      key={uuidv4()}
+      onSubmit={submitHandler}
+      prev={prevStepHandler}
+    />,
     <Confirmation
       key={uuidv4()}
-      next={nextStepHandler}
+      onSubmit={submitHandler}
       prev={prevStepHandler}
       set={setStepHandler}
     />,
-    <Success key={uuidv4()} next={nextStepHandler} />,
+    <Success key={uuidv4()} onSubmit={submitHandler} />,
   ];
 
   return (
@@ -48,7 +52,7 @@ const Form = () => {
       alignItems="center"
       justifyContent="center"
     >
-      <FormHeader />
+      <PageHeader />
       <Card>
         {currentStep < steps.length - 1 && <StepCounter active={currentStep} />}
         {steps[currentStep]}
