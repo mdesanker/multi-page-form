@@ -11,12 +11,7 @@ import { v4 as uuidv4 } from "uuid";
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
-  function nextStepHandler(final = false) {
-    if (final) {
-      console.log("Form submitted");
-      return;
-    }
-
+  function nextStepHandler() {
     window.scrollTo(0, 0);
     setCurrentStep(currentStep + 1);
   }

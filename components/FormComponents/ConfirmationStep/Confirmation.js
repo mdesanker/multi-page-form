@@ -24,7 +24,7 @@ const Confirmation = ({ next, prev, set }) => {
 
     dispatch(companyReset());
     dispatch(rolesReset());
-    next(false);
+    next();
   };
 
   return (
