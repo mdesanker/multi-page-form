@@ -7,6 +7,7 @@ import { companyReset } from "../../../store/slices/companySlice";
 import { rolesReset } from "../../../store/slices/roleSlice";
 import ConfirmationSectionHeader from "./ConfirmationSectionHeader";
 import FormHeading from "../sharedComponents/FormHeading";
+import NextButton from "../sharedComponents/NextButton";
 
 const Confirmation = ({ next, prev, set }) => {
   const dispatch = useDispatch();
@@ -59,19 +60,7 @@ const Confirmation = ({ next, prev, set }) => {
         >
           Previous
         </Button>
-        <Button
-          type="button"
-          colorScheme="blue"
-          p={6}
-          mt={6}
-          w={44}
-          h={12}
-          border="1px"
-          borderColor="blue.500"
-          onClick={confirmHandler}
-        >
-          Submit
-        </Button>
+        <NextButton type="submit" text="Submit" clickHandler={confirmHandler} />
       </Flex>
     </Flex>
   );

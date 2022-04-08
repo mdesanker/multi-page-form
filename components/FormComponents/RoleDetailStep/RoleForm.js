@@ -7,6 +7,7 @@ import { updateRoles } from "../../../store/slices/roleSlice";
 import TextAreaField from "../FieldComponents/TextAreaField";
 import TextField from "../FieldComponents/TextField";
 import FormHeading from "../sharedComponents/FormHeading";
+import NextButton from "../sharedComponents/NextButton";
 
 const RoleForm = ({ next, prev }) => {
   const dispatch = useDispatch();
@@ -136,18 +137,7 @@ const RoleForm = ({ next, prev }) => {
             >
               Previous Step
             </Button>
-            <Button
-              type="submit"
-              colorScheme="blue"
-              p={6}
-              mt={6}
-              w={44}
-              h={12}
-              border="1px"
-              borderColor="blue.500"
-            >
-              Next Step
-            </Button>
+            <NextButton type="submit" text="Next" />
           </Flex>
         </Flex>
       )}

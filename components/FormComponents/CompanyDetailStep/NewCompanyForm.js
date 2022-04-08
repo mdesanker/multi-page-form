@@ -11,6 +11,7 @@ import { newCompanyValidationSchema } from "../../../config/Validation";
 import { updateDetails } from "../../../store/slices/companySlice";
 import SelectField from "../FieldComponents/SelectField";
 import TextField from "../FieldComponents/TextField";
+import NextButton from "../sharedComponents/NextButton";
 
 const NewCompanyForm = ({ next }) => {
   const dispatch = useDispatch();
@@ -91,18 +92,7 @@ const NewCompanyForm = ({ next }) => {
             borderTop="1px"
             borderTopColor="gray.300"
           >
-            <Button
-              type="submit"
-              colorScheme="blue"
-              p={6}
-              mt={6}
-              w={44}
-              h={12}
-              border="1px"
-              borderColor="blue.500"
-            >
-              Next Step
-            </Button>
+            <NextButton type="submit" text="Next" />
           </Flex>
         </Flex>
       )}
