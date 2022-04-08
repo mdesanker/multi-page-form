@@ -36,11 +36,13 @@ const CompanyDetailForm = ({ next }) => {
 
       <FormHeading step={1} label="Company Details" />
 
-      {isNew ? (
-        <NewCompanyForm next={next} />
-      ) : (
-        <ReturningCompanyForm next={next} />
-      )}
+      <Flex mt={5} direction="column">
+        {isNew ? (
+          <NewCompanyForm next={next} />
+        ) : (
+          <ReturningCompanyForm next={next} />
+        )}
+      </Flex>
     </Flex>
   );
 };

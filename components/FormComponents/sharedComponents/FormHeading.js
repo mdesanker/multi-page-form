@@ -2,7 +2,7 @@ import { Flex, Heading, Text } from "@chakra-ui/react";
 
 const FormHeading = ({ step, label, sublabel }) => {
   return (
-    <Flex direction="column" pb={6}>
+    <Flex direction="column" mb={3}>
       <Text color="gray.500" py={2}>
         Step {step}/3
       </Text>

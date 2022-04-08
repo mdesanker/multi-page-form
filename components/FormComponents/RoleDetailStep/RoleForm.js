@@ -1,11 +1,4 @@
-import {
-  Button,
-  Flex,
-  Heading,
-  HStack,
-  Square,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Square } from "@chakra-ui/react";
 import { FieldArray, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,6 +9,7 @@ import TextField from "../FieldComponents/TextField";
 import FormHeading from "../sharedComponents/FormHeading";
 import NextButton from "../sharedComponents/NextButton";
 import PrevButton from "../sharedComponents/PrevButton";
+import { BiTrash } from "react-icons/bi";
 
 const RoleForm = ({ next, prev }) => {
   const dispatch = useDispatch();
@@ -65,9 +59,31 @@ const RoleForm = ({ next, prev }) => {
                 {formik.values.roles.length > 0 &&
                   formik.values.roles.map((role, index) => (
                     <Flex w="full" direction="column" key={index} mt={2}>
-                      <Heading as="h2" fontSize="xl" mb={4}>
-                        Role
-                      </Heading>
+                      <Flex
+                        justifyContent="space-between"
+                        alignItems="center"
+                        pb={1}
+                        borderBottom="1px"
+                        borderBottomColor="gray.300"
+                        mb={6}
+                      >
+                        <Heading as="h2" fontSize="xl">
+                          New Role
+                        </Heading>
+                        <Button
+                          variant="ghost"
+                          role="group"
+                          onClick={() => remove(index)}
+                        >
+                          <Box
+                            as={BiTrash}
+                            h={5}
+                            w={5}
+                            color="gray.400"
+                            _groupHover={{ color: "red.500" }}
+                          />
+                        </Button>
+                      </Flex>
 
                       <TextField
                         name={`roles.${index}.title`}
@@ -98,26 +114,13 @@ const RoleForm = ({ next, prev }) => {
                         name={`roles.${index}.description`}
                         label="Job Description"
                       />
-
-                      <Square>
-                        <Button
-                          my={2}
-                          type="button"
-                          colorScheme="red"
-                          w="200px"
-                          justifySelf="center"
-                          onClick={() => remove(index)}
-                        >
-                          Remove Role
-                        </Button>
-                      </Square>
                     </Flex>
                   ))}
 
                 <Square>
                   <Button
                     type="button"
-                    colorScheme="green"
+                    colorScheme="gray"
                     w="200px"
                     onClick={() =>
                       push({
