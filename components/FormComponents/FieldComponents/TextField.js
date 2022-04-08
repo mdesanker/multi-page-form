@@ -1,12 +1,13 @@
 import {
   FormControl,
   FormErrorMessage,
+  FormHelperText,
   FormLabel,
   Input,
 } from "@chakra-ui/react";
 import { Field, useField } from "formik";
 
-const TextField = ({ label, ...props }) => {
+const TextField = ({ label, helper, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <FormControl
@@ -20,6 +21,7 @@ const TextField = ({ label, ...props }) => {
       <FormLabel color="gray.600" _groupFocusWithin={{ color: "blue.500" }}>
         {label}
       </FormLabel>
+      <FormHelperText>{helper}</FormHelperText>
       <FormErrorMessage>{meta.error}</FormErrorMessage>
     </FormControl>
   );

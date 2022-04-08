@@ -8,11 +8,11 @@ Whether to have 1 large form or two separate forms
 
 ### TODO
 
-- Change label color on focus (\_groupFocusWithin)
+- \*Change label color on focus (\_groupFocusWithin)
 
-- All label colors gray.600
+- \*All label colors gray.600
 
-- Reset form counter if company state === null
+- \*Reset form counter if company state === null
 
 - Name input validation
 

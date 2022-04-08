@@ -46,7 +46,11 @@ const NewCompanyForm = ({ next }) => {
     >
       {(formik) => (
         <Flex direction="column" as="form" onSubmit={formik.handleSubmit}>
-          <TextField name="companyId" label="Company ID" />
+          <TextField
+            name="companyId"
+            label="Company ID"
+            helper="Min. 6 alphanumeric chars, starting with at least 2 letters"
+          />
 
           <TextField name="name" label="Company Name" />
 
@@ -70,7 +74,11 @@ const NewCompanyForm = ({ next }) => {
             options={fundingStageChoices}
           />
 
-          <TextField name="url" label="Company Website" />
+          <TextField
+            name="url"
+            label="Company Website"
+            helper="Format should be: http://"
+          />
 
           <TextField name="admin" label="Admin Name" />
 

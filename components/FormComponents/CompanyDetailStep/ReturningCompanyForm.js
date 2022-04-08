@@ -33,7 +33,11 @@ const ReturningCompanyForm = ({ next }) => {
     >
       {(formik) => (
         <Flex direction="column" as="form" onSubmit={formik.handleSubmit}>
-          <TextField name="companyId" label="Comapny ID" />
+          <TextField
+            name="companyId"
+            label="Company ID"
+            helper="Min. 6 alphanumeric chars, starting with at least 2 letters"
+          />
 
           <TextField name="email" label="Admin Email" type="email" />
 
