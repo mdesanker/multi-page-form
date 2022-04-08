@@ -1,4 +1,11 @@
-import { Button, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Square,
+  VStack,
+} from "@chakra-ui/react";
 import { FieldArray, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -58,7 +65,7 @@ const RoleForm = ({ next, prev }) => {
                 {formik.values.roles.length > 0 &&
                   formik.values.roles.map((role, index) => (
                     <Flex w="full" direction="column" key={index} mt={2}>
-                      <Heading as="h2" fontSize="xl" mb={3}>
+                      <Heading as="h2" fontSize="xl" mb={4}>
                         Role
                       </Heading>
 
@@ -91,30 +98,41 @@ const RoleForm = ({ next, prev }) => {
                         name={`roles.${index}.description`}
                         label="Job Description"
                       />
-                      <Button
-                        my={2}
-                        type="button"
-                        onClick={() => remove(index)}
-                      >
-                        Remove Role
-                      </Button>
+
+                      <Square>
+                        <Button
+                          my={2}
+                          type="button"
+                          colorScheme="red"
+                          w="200px"
+                          justifySelf="center"
+                          onClick={() => remove(index)}
+                        >
+                          Remove Role
+                        </Button>
+                      </Square>
                     </Flex>
                   ))}
-                <Button
-                  type="button"
-                  onClick={() =>
-                    push({
-                      title: "",
-                      salary: "",
-                      department: "",
-                      location: "",
-                      experience: "",
-                      description: "",
-                    })
-                  }
-                >
-                  Add Role
-                </Button>
+
+                <Square>
+                  <Button
+                    type="button"
+                    colorScheme="green"
+                    w="200px"
+                    onClick={() =>
+                      push({
+                        title: "",
+                        salary: "",
+                        department: "",
+                        location: "",
+                        experience: "",
+                        description: "",
+                      })
+                    }
+                  >
+                    Add Role
+                  </Button>
+                </Square>
               </Flex>
             )}
           </FieldArray>
