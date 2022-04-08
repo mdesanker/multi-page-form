@@ -6,6 +6,7 @@ import Confirmation from "../components/FormComponents/ConfirmationStep/Confirma
 import RoleForm from "../components/FormComponents/RoleDetailStep/RoleForm";
 import StepCounter from "../components/FormComponents/StepCounter/StepCounter";
 import Success from "../components/FormComponents/SuccessStep/Success";
+import { v4 as uuidv4 } from "uuid";
 
 const Form = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -31,15 +32,15 @@ const Form = () => {
   }
 
   const steps = [
-    <CompanyDetailForm key={0} next={nextStepHandler} />,
-    <RoleForm key={1} next={nextStepHandler} prev={prevStepHandler} />,
+    <CompanyDetailForm key={uuidv4()} next={nextStepHandler} />,
+    <RoleForm key={uuidv4()} next={nextStepHandler} prev={prevStepHandler} />,
     <Confirmation
-      key={2}
+      key={uuidv4()}
       next={nextStepHandler}
       prev={prevStepHandler}
       set={setStepHandler}
     />,
-    <Success key={3} next={nextStepHandler} />,
+    <Success key={uuidv4()} next={nextStepHandler} />,
   ];
 
   return (
