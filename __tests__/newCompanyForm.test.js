@@ -13,25 +13,15 @@ describe("New company form", () => {
   });
 
   it("check expected fields are in form", () => {
-    const companyId = findCompanyId();
-    const companyName = findCompanyName();
-    const location = findLocation();
-    const policy = findPolicy();
-    const size = findSize();
-    const stage = findStage();
-    const website = findWebsite();
-    const admin = findAdmin();
-    const email = findEmail();
-
-    expect(companyId).toBeInTheDocument();
-    expect(companyName).toBeInTheDocument();
-    expect(location).toBeInTheDocument();
-    expect(policy).toBeInTheDocument();
-    expect(size).toBeInTheDocument();
-    expect(stage).toBeInTheDocument();
-    expect(website).toBeInTheDocument();
-    expect(admin).toBeInTheDocument();
-    expect(email).toBeInTheDocument();
+    expect(findCompanyId()).toBeInTheDocument();
+    expect(findCompanyName()).toBeInTheDocument();
+    expect(findLocation()).toBeInTheDocument();
+    expect(findPolicy()).toBeInTheDocument();
+    expect(findSize()).toBeInTheDocument();
+    expect(findStage()).toBeInTheDocument();
+    expect(findWebsite()).toBeInTheDocument();
+    expect(findAdmin()).toBeInTheDocument();
+    expect(findEmail()).toBeInTheDocument();
   });
 
   it("onSubmit not called when fields incomplete", async () => {
