@@ -7,7 +7,7 @@ const Success = ({ onSubmit }) => {
     <Flex direction="column" alignItems="center" gap={3}>
       <Box as={BsCheck2Circle} size={80} color="green.500" />
       <Heading>Thank you!</Heading>
-      <Text>Your form was submitted successfully.</Text>
+      <Text textAlign="center">Your form was submitted successfully.</Text>
       <NextLink href="/" passHref>
         <Button
           p={6}
