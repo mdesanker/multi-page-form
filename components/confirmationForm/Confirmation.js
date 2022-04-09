@@ -10,7 +10,7 @@ import RoleDetailSummary from "./RoleDetailSummary";
 import NextButton from "../general/NextButton";
 import PrevButton from "../general/PrevButton";
 
-const Confirmation = ({ next, prev, set }) => {
+const Confirmation = ({ onSubmit, prev, set }) => {
   const dispatch = useDispatch();
 
   const { details } = useSelector((state) => state.company);
@@ -24,7 +24,7 @@ const Confirmation = ({ next, prev, set }) => {
 
     dispatch(companyReset());
     dispatch(rolesReset());
-    next();
+    onSubmit();
   };
 
   return (
@@ -38,7 +38,7 @@ const Confirmation = ({ next, prev, set }) => {
       <CompanyDetailSummary data={details} />
       <ConfirmationSectionHeader title="Role Details" page={1} set={set} />
       {roles &&
-        roles.map((role, index) => {
+        roles.map((role) => {
           return <RoleDetailSummary key={uuidv4()} data={role} />;
         })}
 
@@ -49,8 +49,8 @@ const Confirmation = ({ next, prev, set }) => {
         borderTop="1px"
         borderTopColor="gray.300"
       >
-        <PrevButton type="button" text="Previous" clickHandler={prev} />
-        <NextButton type="submit" text="Submit" clickHandler={confirmHandler} />
+        <PrevButton text="Previous" clickHandler={prev} />
+        <NextButton text="Submit" clickHandler={confirmHandler} />
       </Flex>
     </Flex>
   );

@@ -8,10 +8,10 @@ import TextAreaField from "../fieldComponents/TextAreaField";
 import TextField from "../fieldComponents/TextField";
 import FormHeader from "../general/FormHeader";
 import { BiTrash } from "react-icons/bi";
-import PrevButton from "../general/NextButton";
+import PrevButton from "../general/PrevButton";
 import NextButton from "../general/NextButton";
 
-const RoleDetailForm = ({ next, prev }) => {
+const RoleDetailForm = ({ onSubmit, prev }) => {
   const dispatch = useDispatch();
   const { roles } = useSelector((state) => state.role);
 
@@ -41,7 +41,7 @@ const RoleDetailForm = ({ next, prev }) => {
       validationSchema={newRoleValidationSchema}
       onSubmit={(values) => {
         dispatch(updateRoles(values.roles));
-        next(false);
+        onSubmit();
       }}
     >
       {(formik) => (

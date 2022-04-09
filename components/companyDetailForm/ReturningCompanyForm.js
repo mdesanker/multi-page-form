@@ -7,7 +7,7 @@ import { updateDetails } from "../../store/slices/companySlice";
 import TextField from "../fieldComponents/TextField";
 import NextButton from "../general/NextButton";
 
-const ReturningCompanyForm = ({ next }) => {
+const ReturningCompanyForm = ({ onSubmit }) => {
   const dispatch = useDispatch();
   const { details } = useSelector((state) => state.company);
 
@@ -29,7 +29,7 @@ const ReturningCompanyForm = ({ next }) => {
       validationSchema={returningCompanyValidationSchema}
       onSubmit={(values) => {
         dispatch(updateDetails(values));
-        next(values);
+        onSubmit();
       }}
     >
       {(formik) => (

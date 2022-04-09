@@ -7,7 +7,8 @@ const ConfirmationSectionHeader = ({ title, page, set }) => {
       w="full"
       justifyContent="space-between"
       alignItems="center"
-      py={1}
+      pt={2}
+      pb={1}
       borderBottom="1px"
       borderColor="gray.200"
     >

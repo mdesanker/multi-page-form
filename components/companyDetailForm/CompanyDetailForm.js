@@ -6,7 +6,7 @@ import CompanyTypeBtn from "./CompanyTypeBtn";
 import NewCompanyForm from "./NewCompanyForm";
 import ReturningCompanyForm from "./ReturningCompanyForm";
 
-const CompanyDetailForm = ({ next }) => {
+const CompanyDetailForm = ({ onSubmit }) => {
   const dispatch = useDispatch();
 
   const { isNew } = useSelector((state) => state.company);
@@ -34,9 +34,9 @@ const CompanyDetailForm = ({ next }) => {
 
       <Flex mt={5} direction="column">
         {isNew ? (
-          <NewCompanyForm next={next} />
+          <NewCompanyForm onSubmit={onSubmit} />
         ) : (
-          <ReturningCompanyForm next={next} />
+          <ReturningCompanyForm onSubmit={onSubmit} />
         )}
       </Flex>
     </Flex>

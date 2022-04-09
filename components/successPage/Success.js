@@ -2,7 +2,7 @@ import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { BsCheck2Circle } from "react-icons/bs";
 import NextLink from "next/link";
 
-const Success = ({ next }) => {
+const Success = ({ onSubmit }) => {
   return (
     <Flex direction="column" alignItems="center" gap={3}>
       <Box as={BsCheck2Circle} size={80} color="green.500" />
@@ -15,7 +15,7 @@ const Success = ({ next }) => {
           w={44}
           h={12}
           colorScheme="blue"
-          onClick={() => next(true)}
+          onClick={onSubmit}
         >
           Return Home
         </Button>
