@@ -41,15 +41,15 @@ npm run test -- file_name.test.js
 
 ## Description
 
-This is a multi-page form that companies can use to submit new bounties to Talentdrop.
+This is a multi-page form that companies can use to submit new bounties.
 
 The first form page collects company details. Different forms are rendered for new and returning customers.
 
 The second form page collects details on the roles the company wants to create bounties for. Fields for this form are dynamically generated, so multiple roles can be submitted simultaneously. User cannot proceed to the next page without filling out each field for each role created.
 
-The third form page shows a summary of all the information that has been entered. Buttons allow user to navigate directly to page 1 or page 2 to edit inputs, or the previous button can be used to move backwards.
+The third form page shows a summary of all the information that has been entered. Edit buttons allow user to navigate directly to company detail page or role detail page to edit inputs, in addition to using the previous button.
 
-The fourth form page tells the user that their form was submitted successfully and provides a button to navigate back to the home page if desired.
+The fourth form page tells the user that their form was submitted successfully and provides a button to navigate back to the home page.
 
 ## Built with
 
@@ -58,9 +58,10 @@ The fourth form page tells the user that their form was submitted successfully a
 - Formik
 - Yup
 - Redux Toolkit
-- Jest
+- React Testing Library
 
-### Next Steps
+## Next Steps
 
-- Implement file upload for new roles
+- Implement file upload for role descriptions
+
 - Implement testing for all form steps working together
