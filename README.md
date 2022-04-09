@@ -1,6 +1,6 @@
 # Multi-Page Form
 
-A multi-page form for submitting new bounties to Talentdrop.
+A multi-page form to submit bounties for jobs.
 
 [Live demo](https://multi-page-form-jet.vercel.app/)
 
