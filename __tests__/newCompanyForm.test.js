@@ -31,9 +31,24 @@ describe("New company form", () => {
     expect(admin).toBeInTheDocument();
     expect(email).toBeInTheDocument();
   });
+
+  it("onSubmit not called when fields incomplete", async () => {
+    const companyId = findCompanyId();
+    const submitBtn = findSubmitBtn();
+
+    fireEvent.change(companyId, { target: { value: "aa9999" } });
+
+    fireEvent.click(submitBtn);
+
+    expect(onSubmit).not.toHaveBeenCalled();
+  });
 });
 
 // Helper functions
+const findSubmitBtn = () => {
+  return screen.getByRole("button", { name: /Next/i });
+};
+
 const findCompanyId = () => {
   return screen.getByLabelText(/Company ID/i);
 };
