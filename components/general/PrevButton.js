@@ -8,7 +8,7 @@ const PrevButton = ({ type, text, clickHandler }) => {
       variant="outline"
       p={6}
       mt={6}
-      w={44}
+      w={28}
       h={12}
       onClick={clickHandler}
     >
