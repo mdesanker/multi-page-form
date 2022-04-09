@@ -12,6 +12,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Multi-Page Form</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="google-site-verification"
+          content="EeNHS2n2MgRdNTw09xRKOWu_F-feKe9d6hnrSPoW49w"
+        />
       </Head>
       <Provider store={store}>
         <ChakraProvider theme={theme}>
