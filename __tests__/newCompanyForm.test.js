@@ -25,6 +25,7 @@ describe("New company form", () => {
   });
 
   it("onSubmit not called when fields incomplete", async () => {
+    // act and waitFor help fix errors for testing with Formik
     act(() => {
       userEvent.click(findSubmitBtn());
     });

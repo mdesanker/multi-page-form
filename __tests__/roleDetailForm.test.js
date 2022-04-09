@@ -19,6 +19,8 @@ describe("New company form", () => {
     expect(findLocation()).toBeInTheDocument();
     expect(findExperience()).toBeInTheDocument();
     expect(findDescription()).toBeInTheDocument();
+
+    expect(screen.getAllByRole("textbox")).toHaveLength(6);
   });
 
   it("onSubmit not called when fields incomplete", async () => {
@@ -51,11 +53,25 @@ describe("New company form", () => {
       expect(onSubmit).toHaveBeenCalledTimes(1);
     });
   });
+
+  it("add more input fields for additional role", async () => {
+    act(() => {
+      userEvent.click(findAddBtn());
+    });
+
+    await waitFor(() => {
+      expect(screen.getAllByRole("textbox")).toHaveLength(12);
+    });
+  });
 });
 
 // Helper functions
 const findSubmitBtn = () => {
   return screen.getByRole("button", { name: /Next/i });
+};
+
+const findAddBtn = () => {
+  return screen.getByRole("button", { name: /Add Role/i });
 };
 
 const findTitle = () => {
