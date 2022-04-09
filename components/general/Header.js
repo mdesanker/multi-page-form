@@ -1,5 +1,6 @@
-import { Avatar, Box, Flex, Heading, Image, Button } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Heading, Button } from "@chakra-ui/react";
 import NextLink from "next/link";
+import { AiOutlineForm } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -7,14 +8,9 @@ const Header = () => {
       <Flex justifyContent={"space-between"} alignItems="center" h="full">
         <NextLink href="/" passHref>
           <Flex alignItems={"center"} gap={2} cursor="pointer">
-            <Image
-              src="/images/talentdrop_logo.png"
-              alt="Talentdrop logo"
-              boxSize="24px"
-              objectFit="cover"
-            />
+            <Box as={AiOutlineForm} h={8} w={8} color="blue.600" />
             <Heading as="h1" size={"md"} fontWeight="bold">
-              Talentdrop
+              Multi-Page Form
             </Heading>
           </Flex>
         </NextLink>
