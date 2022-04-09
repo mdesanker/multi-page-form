@@ -50,7 +50,7 @@ const NewCompanyForm = ({ onSubmit }) => {
           <TextField
             name="companyId"
             label="Company ID"
-            helper="Min. 6 alphanumeric chars, starting with at least 2 letters"
+            helper="Min. 6 characters, alphanumeric, -, _, no spaces"
           />
 
           <TextField name="name" label="Company Name" />

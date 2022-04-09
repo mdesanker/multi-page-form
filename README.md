@@ -43,7 +43,7 @@ npm run test -- file_name.test.js
 
 This is a multi-page form that companies can use to submit new bounties to Talentdrop.
 
-The first form page collects company details. It shows different fields depending on whether the company is new or returning. Company ID was arbitrarily selected to be a string of at least six alphanumeric characters starting with at least two letters so that the user can't enter only numbers. Company ID could be validated with Yup to check whether it exists in the database (not implemented because frontend-only project). If the company is new, it will prevent the user from using an existing ID, but if the company is returning it will ensure the ID exists and the admin email is associated with it.
+The first form page collects company details. Different forms are rendered for new and returning customers.
 
 The second form page collects details on the roles the company wants to create bounties for. Fields for this form are dynamically generated, so multiple roles can be submitted simultaneously. User cannot proceed to the next page without filling out each field for each role created.
 

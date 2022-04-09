@@ -3,10 +3,7 @@ import * as Yup from "yup";
 export const newCompanyValidationSchema = Yup.object({
   companyId: Yup.string()
     .min(6, "Company ID must be at least 6 characters")
-    .matches(
-      /[A-Za-z]{2,}[A-Za-z0-9]*/gm,
-      "Company ID must start with at least two letters and contain only letters and digits"
-    )
+    .matches(/^[a-zA-Z0-9\-_]{0,40}$/gm, "Company ID must be alphanumeric")
     .required("Company ID is required"),
 
   // Async validator to check whether company ID is unique
@@ -19,7 +16,12 @@ export const newCompanyValidationSchema = Yup.object({
   //   })
   // ),
 
-  name: Yup.string().required("Company name is required"),
+  name: Yup.string()
+    .matches(
+      /(?!^\d+$)^[A-Za-z0-9]*$/gm,
+      "Company name must be alphanumeric, and cannot contain only numbers"
+    )
+    .required("Company name is required"),
   location: Yup.string().required("Location is required"),
   policy: Yup.string().required("Remote policy is required"),
   size: Yup.string().required("Company size is required"),
@@ -34,19 +36,16 @@ export const newCompanyValidationSchema = Yup.object({
 export const returningCompanyValidationSchema = Yup.object({
   companyId: Yup.string()
     .min(6, "Company ID must be at least 6 characters")
-    .matches(
-      /[A-Za-z]{2,}[A-Za-z0-9]*/gm,
-      "Company ID must start with at least two letters and contain only letters and digits"
-    )
+    .matches(/^[a-zA-Z0-9\-_]{0,40}$/gm, "Company ID must be alphanumeric")
     .required("Company ID is required"),
 
-  // Same async validator used here to check that company ID exists in database
+  // Use async validator here to check that company ID exists in database
 
   email: Yup.string()
     .email("Invalid email address")
     .required("Admin email address is required"),
 
-  // Async validator to check that email address matches the company ID in database
+  // Use async validator to check that email address matches the company ID in database
 });
 
 export const newRoleValidationSchema = Yup.object({
