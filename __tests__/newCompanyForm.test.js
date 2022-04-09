@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from "../config/TestUtils";
+import { act } from "react-dom/test-utils";
 import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
-import selectEvent from "react-select-event";
 import NewCompanyForm from "../components/companyDetailForm/NewCompanyForm";
 
 describe("New company form", () => {
@@ -35,7 +35,9 @@ describe("New company form", () => {
   });
 
   it("onSubmit not called when fields incomplete", async () => {
-    userEvent.click(findSubmitBtn());
+    act(() => {
+      userEvent.click(findSubmitBtn());
+    });
 
     await waitFor(() => {
       expect(onSubmit).not.toHaveBeenCalled();
@@ -43,11 +45,32 @@ describe("New company form", () => {
   });
 
   it("onSubmit called when form completed", async () => {
-    userEvent.type(findCompanyId(), "abc12345");
+    act(() => {
+      // userEvent.type(findCompanyId(), "abc1234");
+      fireEvent.change(findCompanyId(), { target: { value: "abc1234" } });
+      fireEvent.change(findCompanyName(), { target: { value: "Talentdrop" } });
+      fireEvent.change(findLocation(), { target: { value: "USA" } });
+      userEvent.selectOptions(findPolicy(), ["hybrid"]);
+      userEvent.selectOptions(findSize(), ["sm"]);
+      userEvent.selectOptions(findStage(), ["seed"]);
+      fireEvent.change(findWebsite(), {
+        target: { value: "http://google.com" },
+      });
+      fireEvent.change(findAdmin(), { target: { value: "admin" } });
+      fireEvent.change(findEmail(), { target: { value: "admin@email.com" } });
+
+      userEvent.click(findSubmitBtn());
+    });
 
     await waitFor(() => {
-      expect(findCompanyId()).toBeInTheDocument();
-      expect(findCompanyId()).toHaveValue("abc12345");
+      // Test inputs for a couple fields work
+      expect(findCompanyId()).toHaveValue("abc1234");
+      expect(
+        screen.getByRole("option", { name: "Hybrid" }).selected
+      ).toBeTruthy();
+
+      expect(onSubmit).toHaveBeenCalled();
+      expect(onSubmit).toHaveBeenCalledTimes(1);
     });
   });
 });
@@ -73,42 +96,12 @@ const findPolicy = () => {
   return screen.getByLabelText(/Remote Policy/i);
 };
 
-const selectPolicy = (policy) => {
-  const dropdown = findPolicy();
-  // Select second option
-  // user.selectOptions(
-  //   dropdown,
-  //   within(dropdown).getByRole("option", { name: policy })
-  // );
-  selectEvent.select(dropdown, policy);
-};
-
 const findSize = () => {
   return screen.getByLabelText(/Company Size/i);
 };
 
-const selectSize = (size) => {
-  const dropdown = findSize();
-  // Select second option
-  // user.selectOptions(
-  //   dropdown,
-  //   within(dropdown).getByRole("option", { name: size })
-  // );
-  selectEvent.select(dropdown, size);
-};
-
 const findStage = () => {
   return screen.getByLabelText(/Funding Stage/i);
-};
-
-const selectStage = (stage) => {
-  const dropdown = findStage();
-  // Select second option
-  // user.selectOptions(
-  //   dropdown,
-  //   within(dropdown).getByRole("option", { name: stage })
-  // );
-  selectEvent.select(dropdown, stage);
 };
 
 const findWebsite = () => {
