@@ -11,6 +11,7 @@ A multi-page form to submit bounties for jobs.
 - [Description](#Description)
 - [Built with](#Built-with)
 - [Next steps](#Next-steps)
+- [Credits](#Credits)
 
 ## How to run locally in dev mode
 
@@ -65,3 +66,7 @@ The fourth form page tells the user that their form was submitted successfully a
 - Implement file upload for role descriptions
 
 - Implement testing for all form steps working together
+
+## Credits
+
+- Favicon from [Flaticon](https://www.flaticon.com/premium-icon/online_2129117?term=form&page=1&position=48&page=1&position=48&related_id=2129117&origin=search)
