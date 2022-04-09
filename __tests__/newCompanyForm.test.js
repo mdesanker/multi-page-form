@@ -1,5 +1,6 @@
-import { render, screen, fireEvent } from "../config/TestUtils";
+import { render, screen, fireEvent, within } from "../config/TestUtils";
 import "@testing-library/jest-dom";
+import user from "@testing-library/user-event";
 import NewCompanyForm from "../components/companyDetailForm/NewCompanyForm";
 
 describe("New company form", () => {
@@ -65,12 +66,39 @@ const findPolicy = () => {
   return screen.getByLabelText(/Remote Policy/i);
 };
 
+const selectPolicy = (policy) => {
+  const dropdown = findPolicy();
+  // Select second option
+  user.selectOptions(
+    dropdown,
+    within(dropdown).getByRole("option", { name: policy })
+  );
+};
+
 const findSize = () => {
   return screen.getByLabelText(/Company Size/i);
 };
 
+const selectSize = (size) => {
+  const dropdown = findSize();
+  // Select second option
+  user.selectOptions(
+    dropdown,
+    within(dropdown).getByRole("option", { name: size })
+  );
+};
+
 const findStage = () => {
   return screen.getByLabelText(/Funding Stage/i);
+};
+
+const selectStage = (stage) => {
+  const dropdown = findStage();
+  // Select second option
+  user.selectOptions(
+    dropdown,
+    within(dropdown).getByRole("option", { name: stage })
+  );
 };
 
 const findWebsite = () => {
