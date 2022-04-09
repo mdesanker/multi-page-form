@@ -19,8 +19,6 @@ const Confirmation = ({ onSubmit, prev, set }) => {
   const confirmHandler = () => {
     // Submission to database would occur here
     console.log("Form data submitted successfully");
-    console.log(details);
-    console.log(roles);
 
     dispatch(companyReset());
     dispatch(rolesReset());
