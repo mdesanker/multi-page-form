@@ -2,7 +2,7 @@
 
 A multi-page form for submitting new bounties to Talentdrop.
 
-[Live demo](https://mdesanker.github.io/multi-page-form/)
+[Live demo](https://multi-page-form-jet.vercel.app/)
 
 ## Table of Contents
 
