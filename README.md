@@ -7,6 +7,7 @@ A multi-page form for submitting new bounties to Talentdrop.
 ## Table of Contents
 
 - [How to run locally in dev mode](#How-to-run-locally-in-dev-mode)
+- [How to run tests](#How-to-run-tests)
 - [Description](#Description)
 - [Built with](#Built-with)
 - [Next steps](#Next-steps)
@@ -23,6 +24,20 @@ npm run dev
 ```
 
 Then navigate to [http://localhost:3000](http://localhost:3000) in a browser
+
+## How to run tests
+
+- To run the entire test suite:
+
+```
+npm run test
+```
+
+- To run tests for a specific file:
+
+```
+npm run test -- file_name.test.js
+```
 
 ## Description
 
@@ -42,8 +57,10 @@ The fourth form page tells the user that their form was submitted successfully a
 - Chakra UI
 - Formik
 - Yup
-- Redux
+- Redux Toolkit
+- Jest
 
 ### Next Steps
 
-- Allow user to upload a file for each job description being submitted for a bounty
+- Implement file upload for new roles
+- Implement testing for all form steps working together
