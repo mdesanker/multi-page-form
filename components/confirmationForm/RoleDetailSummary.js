@@ -16,7 +16,7 @@ const RoleDetailSummary = ({ data }) => {
       <TextOutput label="Salary" value={data.salary} />
       <TextOutput label="Department" value={data.department} />
       <TextOutput label="Location" value={data.location} />
-      <TextOutput label="Required Experience" value={data.experience} />
+      <TextOutput label="Experience" value={data.experience} />
       <TextOutput label="Description" value={data.description} />
     </Flex>
   );
