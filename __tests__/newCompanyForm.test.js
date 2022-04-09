@@ -1,6 +1,7 @@
-import { render, screen, fireEvent, within } from "../config/TestUtils";
+import { render, screen, fireEvent, waitFor } from "../config/TestUtils";
 import "@testing-library/jest-dom";
-import user from "@testing-library/user-event";
+import userEvent from "@testing-library/user-event";
+import selectEvent from "react-select-event";
 import NewCompanyForm from "../components/companyDetailForm/NewCompanyForm";
 
 describe("New company form", () => {
@@ -34,14 +35,20 @@ describe("New company form", () => {
   });
 
   it("onSubmit not called when fields incomplete", async () => {
-    const companyId = findCompanyId();
-    const submitBtn = findSubmitBtn();
+    userEvent.click(findSubmitBtn());
 
-    fireEvent.change(companyId, { target: { value: "aa9999" } });
+    await waitFor(() => {
+      expect(onSubmit).not.toHaveBeenCalled();
+    });
+  });
 
-    fireEvent.click(submitBtn);
+  it("onSubmit called when form completed", async () => {
+    userEvent.type(findCompanyId(), "abc12345");
 
-    expect(onSubmit).not.toHaveBeenCalled();
+    await waitFor(() => {
+      expect(findCompanyId()).toBeInTheDocument();
+      expect(findCompanyId()).toHaveValue("abc12345");
+    });
   });
 });
 
@@ -69,10 +76,11 @@ const findPolicy = () => {
 const selectPolicy = (policy) => {
   const dropdown = findPolicy();
   // Select second option
-  user.selectOptions(
-    dropdown,
-    within(dropdown).getByRole("option", { name: policy })
-  );
+  // user.selectOptions(
+  //   dropdown,
+  //   within(dropdown).getByRole("option", { name: policy })
+  // );
+  selectEvent.select(dropdown, policy);
 };
 
 const findSize = () => {
@@ -82,10 +90,11 @@ const findSize = () => {
 const selectSize = (size) => {
   const dropdown = findSize();
   // Select second option
-  user.selectOptions(
-    dropdown,
-    within(dropdown).getByRole("option", { name: size })
-  );
+  // user.selectOptions(
+  //   dropdown,
+  //   within(dropdown).getByRole("option", { name: size })
+  // );
+  selectEvent.select(dropdown, size);
 };
 
 const findStage = () => {
@@ -95,10 +104,11 @@ const findStage = () => {
 const selectStage = (stage) => {
   const dropdown = findStage();
   // Select second option
-  user.selectOptions(
-    dropdown,
-    within(dropdown).getByRole("option", { name: stage })
-  );
+  // user.selectOptions(
+  //   dropdown,
+  //   within(dropdown).getByRole("option", { name: stage })
+  // );
+  selectEvent.select(dropdown, stage);
 };
 
 const findWebsite = () => {
