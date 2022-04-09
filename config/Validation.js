@@ -18,7 +18,7 @@ export const newCompanyValidationSchema = Yup.object({
 
   name: Yup.string()
     .matches(
-      /(?!^\d+$)^[A-Za-z0-9]*$/gm,
+      /(?!^\d+$)^[A-Za-z0-9\s]*$/gm,
       "Company name must be alphanumeric, and cannot contain only numbers"
     )
     .required("Company name is required"),
