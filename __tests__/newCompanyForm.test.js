@@ -53,7 +53,6 @@ describe("New company form", () => {
     });
 
     await waitFor(() => {
-      // Test inputs for a couple fields work
       expect(findCompanyId()).toHaveValue("abc1234");
       expect(
         screen.getByRole("option", { name: "Hybrid" }).selected
