@@ -42,7 +42,7 @@ describe("New company form", () => {
       fireEvent.change(findCompanyName(), { target: { value: "Talentdrop" } });
       fireEvent.change(findLocation(), { target: { value: "USA" } });
       userEvent.selectOptions(findPolicy(), ["hybrid"]);
-      userEvent.selectOptions(findSize(), ["sm"]);
+      fireEvent.change(findSize(), { target: { value: "25" } });
       userEvent.selectOptions(findStage(), ["seed"]);
       fireEvent.change(findWebsite(), {
         target: { value: "http://google.com" },

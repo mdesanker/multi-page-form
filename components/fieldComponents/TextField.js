@@ -7,7 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { Field, useField } from "formik";
 
-const TextField = ({ label, helper, ...props }) => {
+const TextField = ({ label, helper, type = "text", ...props }) => {
   const [field, meta] = useField(props);
   return (
     <FormControl
@@ -17,7 +17,7 @@ const TextField = ({ label, helper, ...props }) => {
       isRequired
       role="group"
     >
-      <Field as={Input} {...field} {...props} placeholder=" " />
+      <Field as={Input} {...field} {...props} type={type} placeholder=" " />
       <FormLabel color="gray.600" _groupFocusWithin={{ color: "blue.500" }}>
         {label}
       </FormLabel>

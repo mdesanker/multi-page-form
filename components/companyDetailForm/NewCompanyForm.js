@@ -3,7 +3,6 @@ import { Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  companySizeChoices,
   remotePolicyChoices,
   fundingStageChoices,
 } from "../../config/SelectFieldOptions";
@@ -63,11 +62,7 @@ const NewCompanyForm = ({ onSubmit }) => {
             options={remotePolicyChoices}
           />
 
-          <SelectField
-            name="size"
-            label="Company Size"
-            options={companySizeChoices}
-          />
+          <TextField name="size" label="Company Size" type="number" />
 
           <SelectField
             name="stage"
