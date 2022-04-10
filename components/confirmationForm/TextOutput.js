@@ -1,15 +1,15 @@
-import { HStack, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 
 const TextOutput = ({ label, value }) => {
   return (
-    <HStack w="full">
-      <Text fontWeight="bold" fontSize="md" minW={["110px", "150px"]}>
+    <Flex direction={["column", "row"]} w="full">
+      <Text fontWeight="bold" fontSize="md" minW="160px">
         {label}:
       </Text>
-      <Text fontSize="md" isTruncated>
+      <Text fontSize="md" pl={["10px", 0]} isTruncated>
         {value}
       </Text>
-    </HStack>
+    </Flex>
   );
 };
 
