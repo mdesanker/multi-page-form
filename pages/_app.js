@@ -10,8 +10,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>Multi-Page Form</title>
+        <title>Multi-Page Form App</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="A multi-page form app to collect info for job bounties"
+        />
         <meta
           name="google-site-verification"
           content="EeNHS2n2MgRdNTw09xRKOWu_F-feKe9d6hnrSPoW49w"
