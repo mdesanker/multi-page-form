@@ -24,7 +24,10 @@ export const newCompanyValidationSchema = Yup.object({
     .required("Company name is required"),
   location: Yup.string().required("Location is required"),
   policy: Yup.string().required("Remote policy is required"),
-  size: Yup.number().required("Company size is required"),
+  size: Yup.number()
+    .positive("Company size must be positive")
+    .integer("Company size must be an integer")
+    .required("Company size is required"),
   stage: Yup.string().required("Funding stage is required"),
   url: Yup.string().url("Invalid URL").required("Company website is required"),
   admin: Yup.string().required("Admin name is required"),
